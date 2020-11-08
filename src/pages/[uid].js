@@ -47,4 +47,8 @@
 //   }
 // }
 
-// export default Page
+const Page = () => {
+  return <></>;
+}
+
+export default Page
