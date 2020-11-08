@@ -1,7 +1,8 @@
 import Link from 'next/link';
+import axios from "axios";
 import { Container, Row, Col, Form, Input, Label } from 'reactstrap';
 import FeatherIcon from 'feather-icons-react';
-import logo from "../../assets/img/logo.svg";
+import logo from "@assets/img/logo.svg";
 
 const navItems = [
   { id: 2, idnm: "product", navheading: "Product" },
@@ -9,6 +10,20 @@ const navItems = [
 ];
 
 const Footer = () => {
+
+  const subscribeHandler = async () => {
+    try {
+      const r = await axios.post("https://app.teachablehub.com/api/auth/register", {
+        email,
+        meta: {
+          newsletter: true
+        }
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
   return (
     <>
       <footer className="footer">
@@ -66,7 +81,7 @@ const Footer = () => {
                     </div>
                   </Col>
                   <Col lg="12">
-                    <Input type="submit" id="submitsubscribefooter" name="send" className="btn btn-primary btn-block shadow-none" readOnly value="Subscribe" />
+                    <Input type="submit" name="send" className="btn btn-primary btn-block shadow-none" readOnly value="Subscribe" />
                   </Col>
                 </Row>
               </Form>

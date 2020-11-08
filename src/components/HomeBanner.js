@@ -1,4 +1,4 @@
-import useGoogleOptimize from '../utils/hooks/useGoogleOptimize';
+import useGoogleOptimize from '@utils/hooks/useGoogleOptimize';
 import { RichText } from 'prismic-reactjs';
 
 const HomeBanner = ({ data }) => {

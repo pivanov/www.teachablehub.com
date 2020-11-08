@@ -13,7 +13,6 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <link rel="icon" href="/favicon.png" type="image/png" />
-          <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,700,900" rel="stylesheet" />
           <script async type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-180733216-1"></script>
           <script type="text/javascript" src="https://www.googleoptimize.com/optimize.js?id=OPT-TQZ7B87"></script>
           <script type="text/javascript" dangerouslySetInnerHTML={{
@@ -25,7 +24,7 @@ class MyDocument extends Document {
             gtag("config", "UA-180733216-1");
           ` }} />
         </Head>
-        <body onLoad={this.onLoad}>
+        <body>
           <Main />
           <NextScript />
           <PrismicScript />
