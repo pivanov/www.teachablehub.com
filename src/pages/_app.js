@@ -1,7 +1,9 @@
+import dynamic from "next/dynamic";
+import { LoaderStyles } from '@assets/styles/loader';
 import '@assets/styles/scss/style.scss';
 import "../../node_modules/aos/dist/aos.css"
-import { LoaderStyles } from '@assets/styles/loader';
-import Layout from "@components/Layout";
+
+const Layout = dynamic(() => import("../components/Layout"));
 
 
 const App = ({ Component, pageProps }) => {

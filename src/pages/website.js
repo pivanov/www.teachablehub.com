@@ -1,16 +1,17 @@
-import { useEffect } from 'react'
-import { Client } from '@utils/prismicHelpers';
+import { useEffect } from "react";
+import dynamic from "next/dynamic";
+import { Client } from "@utils/prismicHelpers";
 
-import AOS from 'aos';
+import AOS from "aos";
 
-import Section from "@sections/Section";
-import Teachable from "@sections/Teachable";
-import HowItWorks from "@sections/HowItWorks";
-import ForEveryone from "@sections/ForEveryone";
-import GetEarlyAccess from "@sections/GetEarlyAccess";
-import ChatWithUs from "@sections/ChatWithUs";
-import Joke from "@sections/Joke";
-import Pricing from "@sections/Pricing";
+const Section = dynamic(() => import("../sections/Section"));
+const Teachable = dynamic(() => import("../sections/Teachable"));
+const HowItWorks = dynamic(() => import("../sections/HowItWorks"));
+const ForEveryone = dynamic(() => import("../sections/ForEveryone"));
+const GetEarlyAccess = dynamic(() => import("../sections/GetEarlyAccess"));
+const ChatWithUs = dynamic(() => import("../sections/ChatWithUs"));
+const Joke = dynamic(() => import("../sections/Joke"));
+const Pricing = dynamic(() => import("../sections/Pricing"));
 
 const HomePage = ({ doc, menu }) => {
   useEffect(() => {
@@ -90,10 +91,10 @@ const HomePage = ({ doc, menu }) => {
     var doc = document.documentElement;
     var top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
     if (top > 80) {
-      document.getElementById('topnav').classList.add('nav-sticky');
+      document.getElementById("topnav").classList.add("nav-sticky");
     }
     else {
-      document.getElementById('topnav').classList.remove('nav-sticky');
+      document.getElementById("topnav").classList.remove("nav-sticky");
     }
   }
 
@@ -163,8 +164,8 @@ export async function getStaticProps({ preview = null, previewData = {} }) {
 
   const client = Client()
 
-  const doc = await client.getSingle('homepage', ref ? { ref } : null) || {}
-  const menu = await client.getSingle('menu', ref ? { ref } : null) || {}
+  const doc = await client.getSingle("homepage", ref ? { ref } : null) || {}
+  const menu = await client.getSingle("menu", ref ? { ref } : null) || {}
 
   return {
     props: {
