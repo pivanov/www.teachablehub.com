@@ -43,7 +43,7 @@ const NavbarPage = () => {
 
   menu.push(
     <li key="signIn">
-      <a href={"https://app.teachablehub.com"} target="_blank">Sign In</a>
+      <a href="https://app.teachablehub.com" target="_blank">Sign In</a>
     </li>
   );
 

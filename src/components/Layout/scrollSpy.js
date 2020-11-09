@@ -54,25 +54,28 @@ class ScrollspyNav extends Component {
 
     componentDidMount() {
         if (document.querySelector(`a[href='${this.homeDefaultLink}']`)) {
-            document.querySelector(`a[href='${this.homeDefaultLink}']`).addEventListener("click", (event) => {
-                event.preventDefault();
+            document.querySelector(`a[href='${this.homeDefaultLink}']`).addEventListener("click", (e) => {
+                e.preventDefault();
                 this.scrollTo(window.pageYOffset, 0, this.scrollDuration);
                 window.location.hash = "";
             });
         }
 
         document.querySelector("div[data-nav='list']").querySelectorAll("a").forEach((navLink) => {
-            navLink.addEventListener("click", (event) => {
-                event.preventDefault();
-                let sectionID = this.getNavToSectionID(navLink.getAttribute("href"));
+            let sectionID = navLink.href.split("#")[1];
+            console.log('@@@', sectionID);
+            if (sectionID) {
+                navLink.addEventListener("click", (e) => {
+                    e.preventDefault();
 
-                if (sectionID) {
-                    let scrollTargetPosition = document.getElementById(sectionID).offsetTop - (this.headerBackground ? document.querySelector("div[data-nav='list']").scrollHeight : 0);
-                    this.scrollTo(window.pageYOffset, scrollTargetPosition, this.scrollDuration);
-                } else {
-                    this.scrollTo(window.pageYOffset, 0, this.scrollDuration);
-                }
-            });
+                    if (sectionID) {
+                        let scrollTargetPosition = document.getElementById(sectionID).offsetTop - (this.headerBackground ? document.querySelector("div[data-nav='list']").scrollHeight : 0);
+                        this.scrollTo(window.pageYOffset, scrollTargetPosition, this.scrollDuration);
+                    } else {
+                        this.scrollTo(window.pageYOffset, 0, this.scrollDuration);
+                    }
+                });
+            }
         })
 
         window.addEventListener("scroll", this.scrollSection, true);

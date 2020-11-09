@@ -13,6 +13,7 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <link rel="icon" href="/favicon.png" type="image/png" />
+          <style dangerouslySetInnerHTML={{ __html: `.async-hide body { opacity: 0; }` }} />
           <script async type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-180733216-1"></script>
           <script type="text/javascript" src="https://www.googleoptimize.com/optimize.js?id=OPT-TQZ7B87"></script>
           <script type="text/javascript" dangerouslySetInnerHTML={{
@@ -29,7 +30,7 @@ class MyDocument extends Document {
           <NextScript />
           <PrismicScript />
         </body>
-      </Html>
+      </Html >
     )
   }
 }
