@@ -63,7 +63,6 @@ class ScrollspyNav extends Component {
 
         document.querySelector("div[data-nav='list']").querySelectorAll("a").forEach((navLink) => {
             let sectionID = navLink.href.split("#")[1];
-            console.log('@@@', sectionID);
             if (sectionID) {
                 navLink.addEventListener("click", (e) => {
                     e.preventDefault();
