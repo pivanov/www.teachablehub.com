@@ -2,7 +2,7 @@ import useGoogleOptimize from '@utils/hooks/useGoogleOptimize';
 import { RichText } from 'prismic-reactjs';
 
 const HomeBanner = ({ data }) => {
-  const variant = useGoogleOptimize('Qi0DxjPXRQ-oN3fNOlCMWA');
+  const variant = useGoogleOptimize('sbvk5yu9RduLGncBUMw_qQ');
 
   const banner = data.homepage_banner[variant];
 

@@ -15,7 +15,15 @@ class MyDocument extends Document {
           <meta charSet="utf-8" />
           <link rel="icon" href="/favicon.png" type="image/png" />
           <style dangerouslySetInnerHTML={{ __html: `.async-hide #__next { opacity: 0; }` }} />
-          <script async type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-180733216-1"></script>
+          <script dangerouslySetInnerHTML={{
+            __html: `
+            (function(w,d,s,l,i){w[l] = w[l] || []{'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KM5DSX6');
+          `}}></script>
+          <script src="https://www.googleoptimize.com/optimize.js?id=OPT-M2G4HWF"></script>
           <script type="text/javascript" src="https://www.googleoptimize.com/optimize.js?id=OPT-TQZ7B87"></script>
           <script type="text/javascript" dangerouslySetInnerHTML={{
             __html: `
@@ -27,7 +35,6 @@ class MyDocument extends Document {
           ` }} />
         </Head>
         <body>
-          <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM5DSX6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <Main />
           <PageLoading />
           <NextScript />
