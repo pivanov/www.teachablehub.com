@@ -27,10 +27,12 @@ class MyDocument extends Document {
           ` }} />
         </Head>
         <body>
+          <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM5DSX6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <Main />
           <PageLoading />
           <NextScript />
           <PrismicScript />
+
         </body>
       </Html >
     )
