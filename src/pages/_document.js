@@ -1,5 +1,6 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import PrismicScript from '@components/PrismicScript';
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import PageLoading from "@components/PageLoading";
+import PrismicScript from "@components/PrismicScript";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -13,7 +14,7 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <link rel="icon" href="/favicon.png" type="image/png" />
-          <style dangerouslySetInnerHTML={{ __html: `.async-hide body { opacity: 0; }` }} />
+          <style dangerouslySetInnerHTML={{ __html: `.async-hide #__next { opacity: 0; }` }} />
           <script async type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-180733216-1"></script>
           <script type="text/javascript" src="https://www.googleoptimize.com/optimize.js?id=OPT-TQZ7B87"></script>
           <script type="text/javascript" dangerouslySetInnerHTML={{
@@ -27,6 +28,7 @@ class MyDocument extends Document {
         </Head>
         <body>
           <Main />
+          <PageLoading />
           <NextScript />
           <PrismicScript />
         </body>

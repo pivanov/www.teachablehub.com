@@ -1,8 +1,7 @@
 import '@assets/styles/scss/style.scss';
 import "../../node_modules/aos/dist/aos.css"
-
-import Layout from "@components/Layout"
-import PageLoading from "@components/PageLoading"
+import { LoaderStyles } from '@assets/styles/loader';
+import Layout from "@components/Layout";
 
 
 const App = ({ Component, pageProps }) => {
@@ -14,10 +13,10 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <>
+      <LoaderStyles />
       <Layout>
         <Component {...pageProps} />
       </Layout>
-      <PageLoading />
     </>
   );
 };

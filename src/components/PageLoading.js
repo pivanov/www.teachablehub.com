@@ -1,10 +1,6 @@
-import { LoaderStyles } from '@assets/styles/loader';
-
 const PageLoading = () => {
   return (
     <>
-      <LoaderStyles />
-
       <div className="loader">
         <div className="infinity">
           <div><span /></div>
