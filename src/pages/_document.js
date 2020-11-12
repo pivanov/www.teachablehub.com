@@ -15,7 +15,7 @@ class MyDocument extends Document {
           <meta charSet="utf-8" />
           <link rel="icon" href="/favicon.png" type="image/png" />
           <style dangerouslySetInnerHTML={{ __html: `.async-hide #__next { opacity: 0; }` }} />
-          <script dangerouslySetInnerHTML={{
+          <script type="text/javascript" dangerouslySetInnerHTML={{
             __html: `
             (function(w,d,s,l,i){w[l] = w[l] || []{'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -23,8 +23,7 @@ class MyDocument extends Document {
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-KM5DSX6');
           `}}></script>
-          <script src="https://www.googleoptimize.com/optimize.js?id=OPT-M2G4HWF"></script>
-          <script type="text/javascript" src="https://www.googleoptimize.com/optimize.js?id=OPT-TQZ7B87"></script>
+          <script type="text/javascript" src="https://www.googleoptimize.com/optimize.js?id=OPT-M2G4HWF"></script>
           <script type="text/javascript" dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
