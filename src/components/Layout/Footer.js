@@ -31,16 +31,14 @@ const Footer = () => {
           <Row>
             <Col lg="4" xs="12" className="mb-0 mb-md-4 pb-0 pb-md-2" name="footercolumn">
               <Link href="/">
-                <a className="logo-footer">
-                  <img src={logo} height="38" alt="TeachableHub.com" />teachable<span>hub</span>
-                </a>
+                <a className="logo-footer">teachable<span>hub</span></a>
               </Link>
-              <ul className="list-unstyled social-icon social mb-0 mt-4">
+              {/* <ul className="list-unstyled social-icon social mb-0 mt-4">
                 <li className="list-inline-item mr-1"><Link href="/"><a className="rounded" target="_blank" rel="noreferrer"><i><FeatherIcon icon="facebook" className="fea icon-sm fea-social" /></i></a></Link></li>
                 <li className="list-inline-item mr-1"><Link href="/"><a className="rounded" target="_blank" rel="noreferrer"><i><FeatherIcon icon="instagram" className="fea icon-sm fea-social" /></i></a></Link></li>
                 <li className="list-inline-item mr-1"><Link href="/"><a className="rounded" target="_blank" rel="noreferrer"><i><FeatherIcon icon="twitter" className="fea icon-sm fea-social" /></i></a></Link></li>
                 <li className="list-inline-item mr-1"><Link href="/"><a className="rounded" target="_blank" rel="noreferrer"><i><FeatherIcon icon="linkedin" className="fea icon-sm fea-social" /></i></a></Link></li>
-              </ul>
+              </ul> */}
               <div className="text-sm-left">
                 <p className="mb-0">&copy; 2020-21 TeachableHub.</p>
               </div>

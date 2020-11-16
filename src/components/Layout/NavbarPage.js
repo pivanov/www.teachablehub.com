@@ -3,9 +3,6 @@ import Link from 'next/link';
 import { Container } from "reactstrap";
 import ScrollspyNav from "./scrollSpy";
 
-import logo from "@assets/img/logo.svg";
-
-
 const navItems = [
   // { id: 1, idnm: "home", navheading: "Home" },
   // { id: 3, idnm: "service", navheading: "Feature" },
@@ -63,9 +60,7 @@ const NavbarPage = () => {
         <Container>
           <div>
             <Link href="/">
-              <a className="logo">
-                <img src={logo} height="36" alt="" />teachable<span>hub</span>
-              </a>
+              <a className="logo">teachable<span>hub</span></a>
             </Link>
           </div>
           <div className="menu-extras">

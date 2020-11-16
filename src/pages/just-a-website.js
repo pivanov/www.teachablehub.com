@@ -7,7 +7,7 @@ import AOS from "aos";
 const Section = dynamic(() => import("../sections/Section"));
 const Teachable = dynamic(() => import("../sections/Teachable"));
 const HowItWorks = dynamic(() => import("../sections/HowItWorks"));
-const ForEveryone = dynamic(() => import("../sections/ForEveryone"));
+// const ForEveryone = dynamic(() => import("../sections/ForEveryone"));
 const GetEarlyAccess = dynamic(() => import("../sections/GetEarlyAccess"));
 const ChatWithUs = dynamic(() => import("../sections/ChatWithUs"));
 const Joke = dynamic(() => import("../sections/Joke"));
@@ -29,15 +29,15 @@ const HomePage = ({ doc, menu }) => {
 
       document.body.classList = "";
       //set AOS atttributes to section title and desc
-      var elementsTitle = document.getElementsByName("sectiontitle");
-      var elementsDesc = document.getElementsByName("sectiondesc");
+      // var elementsTitle = document.getElementsByName("sectiontitle");
+      // var elementsDesc = document.getElementsByName("sectiondesc");
 
-      for (var i = 0; i < elementsTitle.length; i++) {
-        elementsTitle[i].setAttribute("data-aos", "fade-up");
-        elementsTitle[i].setAttribute("data-aos-duration", "1200");
-        elementsDesc[i].setAttribute("data-aos", "fade-up");
-        elementsDesc[i].setAttribute("data-aos-duration", "1000");
-      }
+      // for (var i = 0; i < elementsTitle.length; i++) {
+      //   elementsTitle[i].setAttribute("data-aos", "fade-up");
+      //   elementsTitle[i].setAttribute("data-aos-duration", "1200");
+      //   elementsDesc[i].setAttribute("data-aos", "fade-up");
+      //   elementsDesc[i].setAttribute("data-aos-duration", "1000");
+      // }
 
       //set AOS atttributes to slider <Media> tags
       // var elements = document.getElementsByName("clientsreview");
@@ -60,11 +60,11 @@ const HomePage = ({ doc, menu }) => {
       // }
 
       //set AOS atttributes to pricing
-      var pricing = document.getElementsByName("pricing");
-      for (var a = 0; a < pricing.length; a++) {
-        pricing[a].setAttribute("data-aos", "fade-up");
-        pricing[a].setAttribute("data-aos-duration", "1400");
-      }
+      // var pricing = document.getElementsByName("pricing");
+      // for (var a = 0; a < pricing.length; a++) {
+      //   pricing[a].setAttribute("data-aos", "fade-up");
+      //   pricing[a].setAttribute("data-aos-duration", "1400");
+      // }
 
       //set AOS atttributes to team
       // var team = document.getElementsByName("team");
@@ -74,11 +74,11 @@ const HomePage = ({ doc, menu }) => {
       // }
 
       //set AOS atttributes to footer
-      var footer = document.getElementsByName("footercolumn");
-      for (var fcol = 0; fcol < footer.length; fcol++) {
-        footer[fcol].setAttribute("data-aos", "fade-up");
-        footer[fcol].setAttribute("data-aos-duration", "1400");
-      }
+      // var footer = document.getElementsByName("footercolumn");
+      // for (var fcol = 0; fcol < footer.length; fcol++) {
+      //   footer[fcol].setAttribute("data-aos", "fade-up");
+      //   footer[fcol].setAttribute("data-aos-duration", "1400");
+      // }
     }
 
 
@@ -133,9 +133,9 @@ const HomePage = ({ doc, menu }) => {
           </div>
         </div>
 
-        <section className="section pt-5" id="for-everyone">
+        {/* <section className="section pt-5" id="for-everyone">
           <ForEveryone />
-        </section>
+        </section> */}
 
         <section className="section pt-1 pb-0 bg-light-custom" id="get-early-access">
           <GetEarlyAccess />

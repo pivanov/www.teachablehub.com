@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "reactstrap";
-import banner from "@assets/img/banner.png";
+import banner from "@assets/img/banner-2.png";
 
 const Section = () => {
   return (
@@ -7,11 +7,11 @@ const Section = () => {
       <section id="home" className="bg-home bg-light d-flex align-items-center">
         <Container>
           <Row className="justify-content-center">
-            <Col className="text-center mt-0 mt-md-5 pt-0 pt-md-5">
-              <div className="title-heading margin-top-100" data-aos="fade-down" data-aos-duration="2200">
+            <Col className="text-center mt-0 mt-md-5 pt-0 pt-md-5 pb-5 mb-5">
+              <div className="title-heading margin-top-100">
                 <h1 className="heading mb-3">The best place to run Machine Learning in production.</h1>
                 <p className="para-desc mx-auto text-muted">
-                  <strong>TeachableHub</strong> is a fully-managed platform where visionaries who want change the world deploy, serve, and share impactful models as public or private APIs(a.k.a. Teachables) with ZERO MLOps tasks &amp; a lot of community spirit.
+                  <strong>TeachableHub</strong> is a fully-managed platform brining ML teams together to deploy, serve, and share impactful models as public or private APIs(a.k.a. Teachables) with ZERO MLOps, seamless scalability, and no costly infrastructure.
                   </p>
                 {/* <div className="text-center subcribe-form mt-4 pt-2" data-aos="fade-up" data-aos-duration="1800">
                   <Form>
@@ -23,9 +23,9 @@ const Section = () => {
                 </div> */}
               </div>
 
-              <div className="home-dashboard onepage-hero mx-auto col-md-12" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1200">
+              {/* <div className="home-dashboard onepage-hero mx-auto col-md-12">
                 <img src={banner} alt="" className="img-fluid" />
-              </div>
+              </div> */}
             </Col>
           </Row>
         </Container>
