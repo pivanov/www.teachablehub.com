@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import { Container, Row, Col, Nav, NavItem, NavLink, TabContent, TabPane } from "reactstrap";
 import FeatherIcon from 'feather-icons-react';
 
@@ -56,7 +57,7 @@ const HowItWorks = () => {
           <Col lg={6} md={6} className="mt-4 mt-sm-0 pt-2 pt-sm-0">
             <div className="section-title mr-lg-5">
               <h4 className="title mb-4">Serve at Scale</h4>
-              <p className="text-muted">Securely serve & instantly scale Teachables on our fully-managed serverless infrastructure. Forget about MLOps tasks, underutilized resources, and infra costs. </p>
+              <p className="text-muted">Securely serve &amp; instantly scale Teachables on our fully-managed serverless infrastructure. Forget about MLOps tasks, underutilized resources, and infra costs.</p>
               <ul className="list-unstyled feature-list text-muted" name="featurelines">
                 <li><i><FeatherIcon icon="check-circle" className="fea icon-sm text-success mr-2" /></i>Infinite scalability &amp; storage</li>
                 <li><i><FeatherIcon icon="check-circle" className="fea icon-sm text-success mr-2" /></i>Fast performance and high availability</li>
@@ -80,10 +81,10 @@ const HowItWorks = () => {
           <Col lg={6} md={6} className="mt-4 mt-sm-0 pt-2 pt-sm-0">
             <div className="section-title ml-lg-5">
               <h4 className="title mb-4">Manage &amp; Collaborate</h4>
-              <p className="text-muted"> Monitor, manage, and control model usage and performance in production, set ACLs &amp; permissions - all from a centralized hub side by side with your entire ML team.</p>
+              <p className="text-muted">Monitor, manage, and control model usage and performance in production, set ACLs &amp; permissions - all from a centralized hub side by side with your entire ML team.</p>
               <ul className="list-unstyled feature-list text-muted" name="featurelines">
                 <li><i><FeatherIcon icon="check-circle" className="fea icon-sm text-success mr-2" /></i>Intuitive, yet powerful UI/UX</li>
-                <li><i><FeatherIcon icon="check-circle" className="fea icon-sm text-success mr-2" /></i>360° view of your model's performance></li>
+                <li><i><FeatherIcon icon="check-circle" className="fea icon-sm text-success mr-2" /></i>360° view of your model's performance</li>
                 <li><i><FeatherIcon icon="check-circle" className="fea icon-sm text-success mr-2" /></i>Effortless collaboration with custom workflows</li>
               </ul>
             </div>
@@ -108,6 +109,19 @@ const HowItWorks = () => {
           <Col lg={6} md={6}>
             <img src={img4} className="img-fluid rounded" alt="" />
           </Col>
+        </Row>
+      </Container>
+
+      <Container>
+        <Row className="mt-100 justify-content-center">
+          <div xs="12" className="text-center">
+            <div className="pb-5">
+              <Link href="/#chat">
+                <a className="btn btn-lg btn-primary">SIGN UP FOR EARLY ACCESS</a>
+              </Link>
+              <p class="f-small pt-1">ALL PUBLIC TEACHABLES ARE FREE!</p>
+            </div>
+          </div>
         </Row>
       </Container>
     </Container>
