@@ -15,7 +15,7 @@
     @include home-common();
     overflow: hidden;
     height: auto;
-    background: linear-gradient(to bottom, #fff 0%, #f8f9fc 20%, #fff 50%, #f8f9fc 100%);
+    // background: linear-gradient(to bottom, #fff 0%, #f8f9fc 100%);
 }
 
 .bg-half-260 {
@@ -53,7 +53,7 @@
 .home-dashboard {
     img {
         position: relative;
-        top: 30px;
+        top: 0;
         z-index: 1;
     }
 }
