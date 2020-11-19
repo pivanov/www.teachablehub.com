@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, Button } from "reactstrap";
 import bg from "@assets/img/bg.png";
 import banner from "@assets/img/homeImage.png";
 
@@ -21,15 +21,7 @@ const Section = () => {
                 <h1 className="heading mb-3">The best place to run Machine Learning in production.</h1>
                 <p className="para-desc mx-auto text-muted">
                   <strong>TeachableHub</strong> is a fully-managed platform brining ML teams together to deploy, serve, and share impactful models as public or private APIs(a.k.a. Teachables) with ZERO MLOps, seamless scalability, and no costly infrastructure.
-                  </p>
-                {/* <div className="text-center subcribe-form mt-4 pt-2" data-aos="fade-up" data-aos-duration="1800">
-                  <Form>
-                    <FormGroup className="mb-0">
-                      <input type="email" id="email" name="email" className="shadow bg-white rounded-pill" required placeholder="Email Address" />
-                      <Button type="submit" color="primary" className="btn-pills">Get Started</Button>
-                    </FormGroup>
-                  </Form>
-                </div> */}
+                </p>
               </div>
 
               <div className="home-dashboard onepage-hero mx-auto col-md-12 pt-5 pb-0 mb-0 margin-top-100">

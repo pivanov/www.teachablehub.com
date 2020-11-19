@@ -7,17 +7,17 @@ import AOS from "aos";
 const Section = dynamic(() => import("../sections/Section"));
 const Teachable = dynamic(() => import("../sections/Teachable"));
 const HowItWorks = dynamic(() => import("../sections/HowItWorks"));
-// const ForEveryone = dynamic(() => import("../sections/ForEveryone"));
+const ForEveryone = dynamic(() => import("../sections/ForEveryone"));
 const GetEarlyAccess = dynamic(() => import("../sections/GetEarlyAccess"));
 const ChatWithUs = dynamic(() => import("../sections/ChatWithUs"));
-const Joke = dynamic(() => import("../sections/Joke"));
+// const Joke = dynamic(() => import("../sections/Joke"));
 const Pricing = dynamic(() => import("../sections/Pricing"));
 
 const HomePage = ({ doc, menu }) => {
   useEffect(() => {
-    window.addEventListener("scroll", scrollNavigation, true);
 
     if (process.browser) {
+      window.addEventListener("scroll", scrollNavigation, true);
       setTimeout(() => {
         AOS.init();
 
@@ -25,9 +25,8 @@ const HomePage = ({ doc, menu }) => {
         html.classList.remove("async-hide");
 
         AOS.refresh();
-      }, 1000);
+      }, 400);
 
-      document.body.classList = "";
       //set AOS atttributes to section title and desc
       // var elementsTitle = document.getElementsByName("sectiontitle");
       // var elementsDesc = document.getElementsByName("sectiondesc");
@@ -118,8 +117,8 @@ const HomePage = ({ doc, menu }) => {
           </div>
         </div>
 
-        <section className="section pt-5" id="how-it-works">
-          <Joke />
+        <section className="section pt-5" id="for-everyone">
+          <ForEveryone />
         </section>
 
         <section className="section pb-5 bg-light" id="pricing">
@@ -132,10 +131,6 @@ const HomePage = ({ doc, menu }) => {
             </svg>
           </div>
         </div>
-
-        {/* <section className="section pt-5" id="for-everyone">
-          <ForEveryone />
-        </section> */}
 
         <section className="section pt-1 pb-0 bg-light-custom" id="get-early-access">
           <GetEarlyAccess />

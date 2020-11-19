@@ -1,23 +1,26 @@
 import Link from 'next/link';
 import { Container, Row, Col } from 'reactstrap';
 
-import SectionTitle from "@components/SectionTitle";
+import img1 from "@assets/img/for-everyone.png";
 
 const ForEveryone = () => {
   return (
     <Container>
-      <SectionTitle
-        title="TeachbleHub is for everyone!"
-        desc="<strong>TeachableHub</strong> has zero learning curve and it is created for all the visionaries who shape our future by building meaningful open-source or proprietary Machine Learning projects. ﻿If you make models that matter and want to get them in action, TeachableHub is for YOU!" />
       <Row className="justify-content-center">
-        <Col sm="8">
-          <div className="buy-button text-center">
-            <Link href="#">
-              <a className="btn btn-primary">
-                Get Early Access
-                </a>
-            </Link>
+        <Col xs={12} className="text-center">
+          <div className="section-title mt-5 mb-4 pb-2">
+            <h3 className="title mb-4">TeachbleHub is for <span className="text-primary">everyone</span></h3>
+            <p className="text-muted para-desc mx-auto mb-0">
+              <strong>TeachableHub</strong> has zero learning curve &amp; securely ties all loose ends together into a smooth production operation - data science, machine learning, app dev, and DevOps. If you make Machine Learning models that matter, TeachableHub <strong>is for YOU</strong>!
+            </p>
           </div>
+        </Col>
+      </Row>
+      <Row className="justify-content-center mt-5">
+        <Col sm="10">
+          <Row className="align-items-center">
+            <img src={img1} className="img-fluid rounded" alt="" />
+          </Row>
         </Col>
       </Row>
     </Container>

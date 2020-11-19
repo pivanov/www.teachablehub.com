@@ -34,7 +34,6 @@ class MyDocument extends Document {
           <PageLoading />
           <NextScript />
           <PrismicScript />
-
         </body>
       </Html >
     )

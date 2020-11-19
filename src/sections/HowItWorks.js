@@ -119,7 +119,7 @@ const HowItWorks = () => {
               <Link href="/#chat">
                 <a className="btn btn-lg btn-primary">SIGN UP FOR EARLY ACCESS</a>
               </Link>
-              <p class="f-small pt-1">ALL PUBLIC TEACHABLES ARE FREE!</p>
+              <p className="f-small pt-1">ALL PUBLIC TEACHABLES ARE FREE!</p>
             </div>
           </div>
         </Row>

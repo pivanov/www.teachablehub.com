@@ -7,7 +7,7 @@ const HomePage = ({ doc, menu }) => {
     setTimeout(() => {
       const html = document.getElementById("html");
       html.classList.remove("async-hide");
-    }, 1000);
+    }, 400);
   }, []);
 
   return (

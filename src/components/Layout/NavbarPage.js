@@ -4,16 +4,8 @@ import { Container } from "reactstrap";
 import ScrollspyNav from "./scrollSpy";
 
 const navItems = [
-  // { id: 1, idnm: "home", navheading: "Home" },
-  // { id: 3, idnm: "service", navheading: "Feature" },
-  // { id: 3, idnm: "testimonial", navheading: "Review" },
-  // { id: 4, idnm: "pricing", navheading: "Price" },
-  // { id: 6, idnm: "contact", navheading: "Contact" },
-
   { id: 1, idnm: "product", navheading: "Product" },
-  { id: 2, idnm: "pricing", navheading: "Price" },
-  // { id: 4, idnm: "ourmission", navheading: "Our Mission" },
-  // { id: 5, idnm: "contact", navheading: "Contacts" },
+  { id: 2, idnm: "pricing", navheading: "Pricing" },
 ];
 
 const NavbarPage = () => {
