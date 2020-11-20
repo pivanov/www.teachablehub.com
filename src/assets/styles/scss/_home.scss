@@ -1,6 +1,39 @@
 //
 // home.scss
 //
+.logo-holder {
+    position: relative;
+}
+
+.creators {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    padding: 0 8px;
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    color: rgba(255, 255, 255, .8);
+    background-color: #7e4197;
+    border-radius: 0 0 5px 5px;
+    transition: background-color .4s;
+
+    img {
+        margin-left: 6px;
+    }
+
+    &:hover {
+        color: rgba(255, 255, 255, 1);
+        background-color: #3c4585;
+    }
+}
 
 .th-btn {
     position: relative;
@@ -20,6 +53,11 @@
 .th-header-link {
     color: #2f55d4;
     margin-left: 40px;
+}
+
+.th-text-small {
+    font-size: 12px;
+    opacity: .8;
 }
 
 @mixin home-common {

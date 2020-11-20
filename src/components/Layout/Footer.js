@@ -6,7 +6,7 @@ import logo from "@assets/img/logo.svg";
 
 const navItems = [
   { id: 2, idnm: "product", navheading: "Product" },
-  { id: 3, idnm: "pricing", navheading: "Price" },
+  { id: 3, idnm: "pricing", navheading: "Pricing" },
 ];
 
 const Footer = () => {
@@ -62,13 +62,16 @@ const Footer = () => {
                   <li>
                     <a href="https://app.teachablehub.com" target="_blank" rel="noreferrer" className="text-muted">Sign In</a>
                   </li>
+                  <li>
+                    <a href="mailto:jobs@teachablehub.com" target="_blank" rel="noreferrer" className="text-muted">We're hiring</a>
+                  </li>
                 </ul>
               </>
             </Col>
 
             <Col lg="4" md="6" xs="12" className="mt-4 mt-sm-0 pt-2 pt-sm-0" name="footercolumn">
               <h4 className="text-light footer-head">Newsletter</h4>
-              <p className="mt-4">Sign up and receive the latest tips via email.</p>
+              <p className="mt-4">The latest TeachableHub news and resources sent straight into your inbox.</p>
               <Form>
                 <Row>
                   <Col lg="12">
@@ -76,6 +79,7 @@ const Footer = () => {
                       <Label>Write your email <span className="text-danger">*</span></Label>
                       <i><FeatherIcon icon="mail" className="fea icon-sm icons" /></i>
                       <Input type="email" name="email" id="emailsubscribe" className="form-control pl-5 rounded" placeholder="Your email ... " required />
+                      <p className="th-text-small text-muted pt-1" style={{ color: "#fff", opacity: .6 }}>We respect your privacy and we’ll never share your details.</p>
                     </div>
                   </Col>
                   <Col lg="12">

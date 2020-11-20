@@ -21,13 +21,13 @@ const Section = () => {
               <div className="title-heading">
                 <h1 className="heading mb-3">The best place to run<br /> Machine Learning in production.</h1>
                 <p className="para-desc text-muted pr-5">
-                  <strong>TeachableHub</strong> is a fully-managed platform brining ML teams together to deploy, serve, and share impactful models as public or private APIs(a.k.a. Teachables) with ZERO MLOps, seamless scalability, and no costly infrastructure.
+                  <strong>TeachableHub</strong> is a fully-managed platform bringing ML teams together to deploy, serve, and share impactful models as public or private APIs(a.k.a. Teachables) with ZERO MLOps, seamless scalability, and no costly infrastructure.
                 </p>
                 <div className="mt-4 pt-2">
                   <Link href="/#chat">
                     <a className="btn btn-lg btn-primary th-btn">
                       SIGN UP FOR EARLY ACCESS
-                      <span className="f-small pt-1">NO CREDIT CARD REQUIRED</span>
+                      <span className="f-small pt-1">ALL PUBLIC TEACHABLES ARE FREE!</span>
                     </a>
                   </Link>
                   <Link href="/#chat">

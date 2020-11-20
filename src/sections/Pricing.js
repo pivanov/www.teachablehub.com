@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Container, Row, Col, Nav, NavItem, NavLink, TabContent, TabPane, Card, CardBody, Badge } from 'reactstrap';
+import { Container, Row, Col, Nav, NavItem, NavLink, TabContent, TabPane, Card, CardBody, Button } from 'reactstrap';
 
 //Import Icons
 import FeatherIcon from 'feather-icons-react';
@@ -13,7 +13,7 @@ const planFeatures = [{
   desc: "Ideal for innovators, freelancers, university practitioners, students, and visionaries building open projects.",
   features: [
     { title: "Unlimited Public Teachables" },
-    { title: "Unlimited Colaborators" },
+    { title: "Unlimited Collaborators" },
     { title: "10 Inferences/Sec" },
     { title: "CPU Runtime" },
     { title: "SSL Protection" },
@@ -28,7 +28,7 @@ const planFeatures = [{
   features: [
     { title: "All from Community" },
     { title: "Unlimited Private Teachables" },
-    { title: "Roles and permissions" },
+    { title: "Roles and Permissions" },
     { title: "Unlimited Inferences/Sec" },
     { title: "GPU Runtime" },
     { title: "Model Versioning" },
@@ -50,7 +50,7 @@ const Pricing = () => {
         <Row className="justify-content-center">
           {
             planFeatures.map((pricing, key) =>
-              <Col md={5} xs={12} key={key} className="mt-4 pt-2" style={{ height: "100%" }}>
+              <Col md={5} xs={12} key={key} className="mt-4 pt-2">
                 <Card className="pricing-rates business-rate shadow bg-light rounded text-center border-0">
                   <CardBody className="pt-4 rounded">
                     <div className="badge badge-success mb-2">{pricing.id === 1 ? "Free" : "Coming soon"}</div>
@@ -78,14 +78,27 @@ const Pricing = () => {
       </Container>
       <Container>
         <Row className="mt-100 justify-content-center">
-          <div xs="12" className="text-center">
-            <div className="pb-5">
+          <Col md={12} xs={12} className="mt-4 pt-2">
+            <div className="text-center">
+              {/* <div className="pb-5">
               <Link href="/#chat">
                 <a className="btn btn-lg btn-primary">SIGN UP FOR EARLY ACCESS</a>
               </Link>
               <p className="f-small pt-1">ALL PUBLIC TEACHABLES ARE FREE!</p>
+            </div> */}
+              <SectionTitle
+                title="Sign up for early access now"
+                desc="and get a FREE consultation from our ML deployment experts!"
+              />
+              <div className="input-group input-group-lg" style={{ width: 600, margin: "0 auto" }}>
+                <input type="text" className="form-control" aria-label="Large" placeholder="Your email ..." required="" />
+                <div className="input-group-append">
+                  <Button color="primary" className="submitBnt" onClick={() => { }} type="button" id="newssubscribebtn">Sign Up</Button>
+                </div>
+              </div>
+              <p className="th-text-small text-muted mt-3">We respect your privacy and we’ll never share your details.</p>
             </div>
-          </div>
+          </Col>
         </Row>
       </Container>
     </>

@@ -132,7 +132,7 @@ const HomePage = ({ doc, menu }) => {
           </div>
         </div>
 
-        <section className="section pt-1 pb-0 bg-light-custom" id="get-early-access">
+        {/* <section className="section pt-1 pb-0 bg-light-custom" id="get-early-access">
           <GetEarlyAccess />
         </section>
         <div className="position-relative">
@@ -141,11 +141,11 @@ const HomePage = ({ doc, menu }) => {
               <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
             </svg>
           </div>
-        </div>
+        </div> */}
 
-        {/* <section className="section pt-5 pb-5 mb-5" id="chat-with-us">
+        <section className="section pt-5 pb-5 mb-5" id="chat-with-us">
           <ChatWithUs />
-        </section> */}
+        </section>
       </>
     )
   }

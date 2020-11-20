@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Container } from "reactstrap";
-import ScrollspyNav from "./scrollSpy";
+
+import sashidoLogo from "@assets/img/sashido-logo.svg";
 
 const navItems = [
   { id: 1, idnm: "product", navheading: "Product" },
@@ -16,14 +17,6 @@ const NavbarPage = () => {
   const toggleLine = () => {
     setState(prevState => ({ isOpen: !prevState.isOpen }));
   }
-
-  //Store all Navigationbar Id into TargetID variable(Used for Scrollspy)
-  const targetId = navItems.map((item) => {
-    return (
-      item.idnm
-    )
-  });
-
   const menu = navItems.map((item) => (
     <li key={item.idnm} className={item.navheading === "Product" ? "active" : ""} >
       <a href={"#" + item.idnm}>{item.navheading}</a>
@@ -40,47 +33,41 @@ const NavbarPage = () => {
     <li key="get">
       <div className="buy-button">
         <a href="#get-early-access" className="btn btn-primary">
-          Get Early Access
+          GET EARLY ACCESS
         </a>
       </div>
     </li>
   );
 
   return (
-    <>
-      <header id="topnav" className="defaultscroll sticky">
-        <Container>
-          <div>
-            <Link href="/">
-              <a className="logo">teachable<span>hub</span></a>
-            </Link>
+    <header id="topnav" className="defaultscroll sticky">
+      <Container>
+        <div className="logo-holder">
+          <Link href="/">
+            <a className="logo">teachable<span>hub</span></a>
+          </Link>
+          <a href="https://www.sashido.io" className="text-center creators" target="_blank" rel="noreferrer">
+            From the creators of <img src={sashidoLogo} height="14" />
+          </a>
+        </div>
+        <div id="navigation" style={{ display: state.isOpen ? "block" : "none" }}>
+          <ul className="navigation-menu">
+            {menu}
+          </ul>
+        </div>
+        <div className="menu-extras">
+          <div className="menu-item">
+            <a onClick={toggleLine} className={state.isOpen ? "navbar-toggle open" : "navbar-toggle"}>
+              <div className="lines">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </a>
           </div>
-          <div className="menu-extras">
-            <div className="menu-item">
-              <a onClick={toggleLine} className={state.isOpen ? "navbar-toggle open" : "navbar-toggle"}>
-                <div className="lines">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </a>
-            </div>
-          </div>
-          <ScrollspyNav
-            scrollTargetIds={targetId}
-            scrollDuration="800"
-            headerBackground="false"
-            activeNavClass="active"
-          >
-            <div id="navigation" style={{ display: state.isOpen ? "block" : "none" }}>
-              <ul className="navigation-menu">
-                {menu}
-              </ul>
-            </div>
-          </ScrollspyNav>
-        </Container>
-      </header>
-    </>
+        </div>
+      </Container>
+    </header>
   );
 }
 

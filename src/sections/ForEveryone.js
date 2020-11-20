@@ -9,7 +9,7 @@ const ForEveryone = () => {
       <Row className="justify-content-center">
         <Col xs={12} className="text-center">
           <div className="section-title mt-5 mb-4 pb-2">
-            <h3 className="title mb-4">TeachbleHub is for <span className="text-primary">everyone</span></h3>
+            <h3 className="title mb-4">TeachbleHub is for everyone!</h3>
             <p className="text-muted para-desc mx-auto mb-0">
               <strong>TeachableHub</strong> has zero learning curve &amp; securely ties all loose ends together into a smooth production operation - data science, machine learning, app dev, and DevOps. If you make Machine Learning models that matter, TeachableHub <strong>is for YOU</strong>!
             </p>
