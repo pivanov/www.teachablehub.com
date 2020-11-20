@@ -143,9 +143,9 @@ const HomePage = ({ doc, menu }) => {
           </div>
         </div>
 
-        <section className="section pt-5 pb-5 mb-5" id="chat-with-us">
+        {/* <section className="section pt-5 pb-5 mb-5" id="chat-with-us">
           <ChatWithUs />
-        </section>
+        </section> */}
       </>
     )
   }

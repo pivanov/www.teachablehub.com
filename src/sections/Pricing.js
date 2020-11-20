@@ -13,7 +13,7 @@ const planFeatures = [{
   desc: "Ideal for innovators, freelancers, university practitioners, students, and visionaries building open projects.",
   features: [
     { title: "Unlimited Public Teachables" },
-    { title: "Unlimited Public Colaborators" },
+    { title: "Unlimited Colaborators" },
     { title: "10 Inferences/Sec" },
     { title: "CPU Runtime" },
     { title: "SSL Protection" },
@@ -28,7 +28,7 @@ const planFeatures = [{
   features: [
     { title: "All from Community" },
     { title: "Unlimited Private Teachables" },
-    { title: "Unlimited Private Colaborators" },
+    { title: "Roles and permissions" },
     { title: "Unlimited Inferences/Sec" },
     { title: "GPU Runtime" },
     { title: "Model Versioning" },
@@ -52,7 +52,8 @@ const Pricing = () => {
             planFeatures.map((pricing, key) =>
               <Col md={5} xs={12} key={key} className="mt-4 pt-2" style={{ height: "100%" }}>
                 <Card className="pricing-rates business-rate shadow bg-light rounded text-center border-0">
-                  <CardBody className="pt-4">
+                  <CardBody className="pt-4 rounded">
+                    <div className="badge badge-success mb-2">{pricing.id === 1 ? "Free" : "Coming soon"}</div>
                     <h3 className="title text-uppercase mb-2">{pricing.title}</h3>
                     <p className="text-small text-left text-muted pl-2 mb-4">{pricing.desc}</p>
                     {/* <div className="d-flex justify-content-center mb-4">
@@ -64,7 +65,7 @@ const Pricing = () => {
                     <ul className="feature list-unstyled pl-2 text-left">
                       {
                         pricing.features.map((feature, key) =>
-                          <li key={key} className="feature-list text-muted"><i><FeatherIcon icon="check" className="fea icon-sm text-success mr-2" /></i>{feature.title}</li>
+                          <li key={key} className="feature-list text-muted"><i><FeatherIcon icon="check" className="fea text-success mr-2" /></i>{feature.title}</li>
                         )
                       }
                     </ul>

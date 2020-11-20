@@ -14,8 +14,7 @@ const GetEarlyAccess = () => {
   }
 
   return (
-    <Container className="mt-100 mt-60">
-      {/* section title */}
+    <Container className="mt-100 mt-60 pb-5">
       <SectionTitle title="Sign up for early access now"
         desc="and get a FREE consultation from our ML deployment experts!" />
 
@@ -27,16 +26,12 @@ const GetEarlyAccess = () => {
           >
             Data sended successfully.
           </Alert>
-          <Form>
-            <FormGroup>
-              <InputGroup className="mb-3">
-                <Input name="email" id="email" type="email" className="form-control" placeholder="Your email ..." required="" />
-                <InputGroupAddon addonType="append">
-                  <Button color="primary" className="submitBnt" onClick={handleSubmit} type="button" id="newssubscribebtn">Sign Up</Button>
-                </InputGroupAddon>
-              </InputGroup>
-            </FormGroup>
-          </Form>
+          <div className="input-group input-group-lg">
+            <input type="text" className="form-control" aria-label="Large" placeholder="Your email ..." required="" />
+            <div className="input-group-append">
+              <Button color="primary" className="submitBnt" onClick={handleSubmit} type="button" id="newssubscribebtn">Sign Up</Button>
+            </div>
+          </div>
         </Col>
       </Row>
     </Container>
