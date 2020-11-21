@@ -1,6 +1,7 @@
-import Link from 'next/link';
+import { useRef } from "react";
+import Link from "next/link";
 import axios from "axios";
-import { Container, Row, Col, Form, Input, Label } from 'reactstrap';
+import { Container, Row, Col, Input, Label } from "reactstrap";
 
 const navItems = [
   { id: 2, idnm: "product", navheading: "Product" },
@@ -8,14 +9,18 @@ const navItems = [
 ];
 
 const Footer = () => {
+  const refEmail = useRef();
 
-  const subscribeHandler = async () => {
+  const subscribeHandler = async (e) => {
+    e.preventDefault();
+    const { current } = refEmail;
+    const { props } = current;
+    const email = current.value
+
     try {
-      const r = await axios.post("https://app.teachablehub.com/api/auth/register", {
+      const r = await axios.post("https://api.teachablehub.com/v1/earlyaccess", {
         email,
-        meta: {
-          newsletter: true
-        }
+        only_newsletter: true
       });
     } catch (e) {
       console.error(e);
@@ -64,20 +69,20 @@ const Footer = () => {
             <Col lg="4" md="6" xs="12" className="mt-4 mt-sm-0 pt-2 pt-sm-0" name="footercolumn">
               <h4 className="text-light footer-head">Newsletter</h4>
               <p className="mt-4">The latest TeachableHub news and resources sent straight into your inbox.</p>
-              <Form>
-                <Row>
-                  <Col lg="12">
-                    <div className="foot-subscribe form-group position-relative">
-                      <Label>Write your email <span className="text-danger">*</span></Label>
-                      <Input type="email" name="email" id="emailsubscribe" className="form-control rounded" placeholder="Your email ... " required />
-                      <p className="th-text-small text-muted pt-1" style={{ color: "#fff", opacity: .6 }}>We respect your privacy and we’ll never share your details.</p>
-                    </div>
-                  </Col>
-                  <Col lg="12">
-                    <Input type="submit" name="send" className="btn btn-primary btn-block shadow-none" value="Subscribe" />
-                  </Col>
-                </Row>
-              </Form>
+              <Row>
+                <Col lg="12">
+                  <div className="foot-subscribe form-group position-relative">
+                    <Label>Write your email <span className="text-danger">*</span></Label>
+                    <Input innerRef={refEmail} type="email" name="email" id="emailsubscribe" className="form-control rounded" placeholder="Your email ... " required />
+                    <p className="th-text-small text-muted pt-1" style={{ color: "#fff", opacity: .6 }}>We respect your privacy and we’ll never share your details.</p>
+                  </div>
+                </Col>
+                <Col lg="12">
+                  <a className="btn btn-primary btn-block shadow-none" onClick={subscribeHandler}>
+                    Subscribe
+                  </a>
+                </Col>
+              </Row>
             </Col>
 
           </Row>
