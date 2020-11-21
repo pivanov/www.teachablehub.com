@@ -1,23 +1,27 @@
 import Link from 'next/link';
-import { Row } from 'reactstrap';
-// import ChatBubbleIcon from "mdi-react/ChatBubbleIcon";
+import { Row, Col, Container } from 'reactstrap';
+import SectionTitle from "@components/SectionTitle";
 
 const ChatWithUs = () => {
   return (
-    <Row className="mt-md-5 pt-md-3 mt-4 pt-2 mt-sm-0 pt-sm-0 justify-content-center">
-      <div xs="12" className="text-center">
-        <div className="section-title">
-          <h4 className="title mb-4">Couldn't find answers to any of your questions?</h4>
-          <p className="text-muted para-desc mx-auto">There is a way to find an answer to all of your questions. Our team is here to help!</p>
-          <div className="mt-4 pt-2">
-            <Link href="/#chat">
-              <a className="btn btn-primary">Chat With Us</a>
-            </Link>
+    <Container id="questions">
+      <Row className="mt-md-5 pt-md-3 mt-4 pt-2 mt-sm-0 pt-sm-0 justify-content-center">
+        <Col xs="12">
+          <div className="text-center">
+            <SectionTitle
+              title="Couldn't find answers to any of your questions?"
+              desc="There is a way to find an answer to all of your questions. Our team is here to help!"
+            />
+            <div className="mt-4 pt-2">
+              <Link href="/#questions">
+                <a className="btn btn-primary">Chat With Us</a>
+              </Link>
+            </div>
           </div>
-        </div>
-      </div>
-    </Row>
-  )
+        </Col>
+      </Row>
+    </Container>
+  );
 }
 
 export default ChatWithUs;

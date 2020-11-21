@@ -116,7 +116,7 @@ const HowItWorks = () => {
         <Row className="mt-100 justify-content-center">
           <div xs="12" className="text-center">
             <div className="pb-5">
-              <Link href="/#chat">
+              <Link href="/#early-access">
                 <a className="btn btn-lg btn-primary">SIGN UP FOR EARLY ACCESS</a>
               </Link>
               <p className="f-small pt-1">ALL PUBLIC TEACHABLES ARE FREE!</p>

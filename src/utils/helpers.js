@@ -1,11 +1,19 @@
+const getOffset = (el) => {
+  var rect = el.getBoundingClientRect(),
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+}
+
 const clickHandler = (e) => {
   e.preventDefault();
   const { hash } = e.target;
   const href = hash.split("#")[1];
   const el = document.getElementById(href);
   if (el) {
+    const offset = getOffset(el);
     scroll({
-      top: el.offsetTop - 40,
+      top: offset.top - 40,
       behavior: "smooth"
     });
 
@@ -16,7 +24,6 @@ const clickHandler = (e) => {
       location.hash = hash;
     }
   }
-
 }
 
 export const ScrollToHash = () => {

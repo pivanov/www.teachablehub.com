@@ -1,10 +1,6 @@
 import Link from 'next/link';
 import { Container, Row, Col, Nav, NavItem, NavLink, TabContent, TabPane, Card, CardBody, Button } from 'reactstrap';
-
-//Import Icons
 import FeatherIcon from 'feather-icons-react';
-
-//Import Components
 import SectionTitle from "@components/SectionTitle";
 
 const planFeatures = [{
@@ -76,16 +72,10 @@ const Pricing = () => {
           }
         </Row>
       </Container>
-      <Container>
-        <Row className="mt-100 justify-content-center">
+      <Container id="early-access" className="pt-5">
+        <Row className="justify-content-center">
           <Col md={12} xs={12} className="mt-4 pt-2">
             <div className="text-center">
-              {/* <div className="pb-5">
-              <Link href="/#chat">
-                <a className="btn btn-lg btn-primary">SIGN UP FOR EARLY ACCESS</a>
-              </Link>
-              <p className="f-small pt-1">ALL PUBLIC TEACHABLES ARE FREE!</p>
-            </div> */}
               <SectionTitle
                 title="Sign up for early access now"
                 desc="and get a FREE consultation from our ML deployment experts!"
@@ -100,7 +90,7 @@ const Pricing = () => {
             </div>
           </Col>
         </Row>
-      </Container>
+      </Container >
     </>
   );
 }

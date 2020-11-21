@@ -19,7 +19,7 @@ const NavbarPage = () => {
   }
   const menu = navItems.map((item) => (
     <li key={item.idnm} className={item.navheading === "Product" ? "active" : ""} >
-      <a href={"#" + item.idnm}>{item.navheading}</a>
+      <a href={"/#" + item.idnm}>{item.navheading}</a>
     </li>
   ));
 
@@ -32,7 +32,7 @@ const NavbarPage = () => {
   menu.push(
     <li key="get">
       <div className="buy-button">
-        <a href="#get-early-access" className="btn btn-primary">
+        <a href="/#early-access" className="btn btn-primary">
           GET EARLY ACCESS
         </a>
       </div>
