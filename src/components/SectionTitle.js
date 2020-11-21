@@ -8,7 +8,7 @@ const SectionTitle = ({
   return (
     <>
       <Row className="justify-content-center">
-        <Col xs="8" className={isLeft ? "" : "text-center"}>
+        <Col xs="12" className={isLeft ? "" : "text-center"}>
           <div className="section-title mb-4 pb-2" name="maintitle">
             <h3
               className="title mb-4"

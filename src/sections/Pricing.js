@@ -80,7 +80,7 @@ const Pricing = () => {
                 title="Sign up for early access now"
                 desc="and get a FREE consultation from our ML deployment experts!"
               />
-              <div className="input-group input-group-lg" style={{ width: 600, margin: "0 auto" }}>
+              <div className="input-group input-group-lg" style={{ maxWidth: 600, margin: "0 auto" }}>
                 <input type="text" className="form-control" aria-label="Large" placeholder="Your email ..." required="" />
                 <div className="input-group-append">
                   <Button color="primary" className="submitBnt" onClick={() => { }} type="button" id="newssubscribebtn">Sign Up</Button>

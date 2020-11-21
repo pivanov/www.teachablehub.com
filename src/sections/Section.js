@@ -5,7 +5,7 @@ import banner from "@assets/img/header.png";
 
 const css = {
   // background: `url(${bg}) top center repeat-x`,
-  backgroundImage: `url(${bg}), url(${banner}), linear-gradient(to bottom, #fff 0%, #f8f9fc 100%) `,
+  backgroundImage: `url(${bg}), url(${banner}), linear-gradient(to bottom, #fff 0%, #f8f9fc 100%)`,
   backgroundSize: "auto",
   backgroundPosition: "center top, right bottom",
   backgroundRepeat: "repeat-x, no-repeat",
@@ -23,7 +23,7 @@ const Section = () => {
                 <p className="para-desc text-muted pr-5">
                   <strong>TeachableHub</strong> is a fully-managed platform bringing ML teams together to deploy, serve, and share impactful models as public or private APIs(a.k.a. Teachables) with ZERO MLOps, seamless scalability, and no costly infrastructure.
                 </p>
-                <div className="mt-4 pt-2">
+                <div className="th-header-buttons mt-4 pt-2">
                   <Link href="/#early-access">
                     <a className="btn btn-lg btn-primary th-btn">
                       SIGN UP FOR EARLY ACCESS
@@ -38,14 +38,6 @@ const Section = () => {
                 </div>
               </div>
             </Col>
-
-            {/* <Col lg="4" md="6" className="mt-4 pt-2 mt-sm-0 pt-sm-0 pl-0">
-              <div className="classic-saas-image position-relative">
-                <div className="position-relative">
-                  <img src={banner} className="mx-auto d-block" alt="" />
-                </div>
-              </div>
-            </Col> */}
           </Row>
         </Container>
       </section>

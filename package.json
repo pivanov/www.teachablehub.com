@@ -4,7 +4,7 @@
   "private": true,
   "description": "Sample website built with Next.js using Prismic headless CMS",
   "scripts": {
-    "start": "vercel dev",
+    "start": "vercel dev --listen 4000",
     "build": "next build",
     "deploy": "vercel deploy --prod"
   },
