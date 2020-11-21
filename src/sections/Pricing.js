@@ -61,7 +61,10 @@ const Pricing = () => {
                     <ul className="feature list-unstyled pl-2 text-left">
                       {
                         pricing.features.map((feature, key) =>
-                          <li key={key} className="feature-list text-muted"><i><FeatherIcon icon="check" className="fea text-success mr-2" /></i>{feature.title}</li>
+                          <li key={key} className="feature-list text-muted">
+                            <i><FeatherIcon icon="check" size={20} className="fea text-success mr-2" /></i>
+                            {feature.title}
+                          </li>
                         )
                       }
                     </ul>
@@ -74,19 +77,19 @@ const Pricing = () => {
       </Container>
       <Container id="early-access" className="pt-5">
         <Row className="justify-content-center">
-          <Col md={12} xs={12} className="mt-4 pt-2">
+          <Col md={6} xs={12} className="mt-4 pt-2">
             <div className="text-center">
               <SectionTitle
                 title="Sign up for early access now"
                 desc="and get a FREE consultation from our ML deployment experts!"
               />
-              <div className="input-group input-group-lg" style={{ maxWidth: 600, margin: "0 auto" }}>
+              <div className="input-group input-group-lg" >
                 <input type="text" className="form-control" aria-label="Large" placeholder="Your email ..." required="" />
                 <div className="input-group-append">
                   <Button color="primary" className="submitBnt" onClick={() => { }} type="button" id="newssubscribebtn">Sign Up</Button>
                 </div>
               </div>
-              <p className="th-text-small text-muted mt-3">We respect your privacy and we’ll never share your details.</p>
+              <p className="th-text-small text-muted mt-2 text-left pl-3">We respect your privacy and we’ll never share your details.</p>
             </div>
           </Col>
         </Row>

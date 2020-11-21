@@ -6,7 +6,6 @@
     position: relative;
     height: 100%;
     z-index: 1;
-    // border-bottom: 3px solid $gray-500 !important;
 
     .title {
         color: $primary;
@@ -58,27 +57,6 @@
             h6 {
                 font-size: 12px;
             }
-        }
-
-        &:hover {
-            // transform: translateY(-10px);
-        }
-    }
-}
-
-//page-invoice.html
-.invoice-top {
-    .logo-invoice {
-        font-weight: 700;
-        font-size: 27px;
-        letter-spacing: 1px;
-    }
-}
-
-@media (max-width: 767px) {
-    .pricing-rates {
-        &.starter-plan {
-            transform: scale(1);
         }
     }
 }

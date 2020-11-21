@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import axios from "axios";
 import { Container, Row, Col, Form, Input, Label } from 'reactstrap';
-import FeatherIcon from 'feather-icons-react';
-import logo from "@assets/img/logo.svg";
 
 const navItems = [
   { id: 2, idnm: "product", navheading: "Product" },
@@ -33,12 +31,6 @@ const Footer = () => {
               <Link href="/">
                 <a className="logo-footer">teachable<span>hub</span></a>
               </Link>
-              {/* <ul className="list-unstyled social-icon social mb-0 mt-4">
-                <li className="list-inline-item mr-1"><Link href="/"><a className="rounded" target="_blank" rel="noreferrer"><i><FeatherIcon icon="facebook" className="fea icon-sm fea-social" /></i></a></Link></li>
-                <li className="list-inline-item mr-1"><Link href="/"><a className="rounded" target="_blank" rel="noreferrer"><i><FeatherIcon icon="instagram" className="fea icon-sm fea-social" /></i></a></Link></li>
-                <li className="list-inline-item mr-1"><Link href="/"><a className="rounded" target="_blank" rel="noreferrer"><i><FeatherIcon icon="twitter" className="fea icon-sm fea-social" /></i></a></Link></li>
-                <li className="list-inline-item mr-1"><Link href="/"><a className="rounded" target="_blank" rel="noreferrer"><i><FeatherIcon icon="linkedin" className="fea icon-sm fea-social" /></i></a></Link></li>
-              </ul> */}
               <div className="text-sm-left">
                 <p className="mb-0">&copy; 2020-21 TeachableHub.</p>
               </div>
@@ -77,13 +69,12 @@ const Footer = () => {
                   <Col lg="12">
                     <div className="foot-subscribe form-group position-relative">
                       <Label>Write your email <span className="text-danger">*</span></Label>
-                      <i><FeatherIcon icon="mail" className="fea icon-sm icons" /></i>
-                      <Input type="email" name="email" id="emailsubscribe" className="form-control pl-5 rounded" placeholder="Your email ... " required />
+                      <Input type="email" name="email" id="emailsubscribe" className="form-control rounded" placeholder="Your email ... " required />
                       <p className="th-text-small text-muted pt-1" style={{ color: "#fff", opacity: .6 }}>We respect your privacy and we’ll never share your details.</p>
                     </div>
                   </Col>
                   <Col lg="12">
-                    <Input type="submit" name="send" className="btn btn-primary btn-block shadow-none" readOnly value="Subscribe" />
+                    <Input type="submit" name="send" className="btn btn-primary btn-block shadow-none" value="Subscribe" />
                   </Col>
                 </Row>
               </Form>

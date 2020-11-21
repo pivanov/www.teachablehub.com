@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
-import { LoaderStyles } from '@assets/styles/loader';
-import '@assets/styles/scss/style.scss';
-import "../../node_modules/aos/dist/aos.css"
+import { LoaderStyles } from "@assets/styles/loader";
+import "@assets/styles/scss/style.scss";
 
 const Layout = dynamic(() => import("../components/Layout"));
 

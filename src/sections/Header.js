@@ -1,29 +1,21 @@
 import Link from 'next/link';
 import { Container, Row, Col } from "reactstrap";
-import bg from "@assets/img/bg.png";
-import banner from "@assets/img/header.png";
-
-const css = {
-  // background: `url(${bg}) top center repeat-x`,
-  backgroundImage: `url(${bg}), url(${banner}), linear-gradient(to bottom, #fff 0%, #f8f9fc 100%)`,
-  backgroundSize: "auto",
-  backgroundPosition: "center top, right bottom",
-  backgroundRepeat: "repeat-x, no-repeat",
-};
 
 const Section = () => {
   return (
     <>
-      <section className="bg-half d-table w-100 overflow-hidden" id="home" style={css}>
+      <section id="home" className="section-home bg-pattern">
+        <div className="bg-header" />
+        <div className="bg-gradient" />
         <Container>
-          <Row className="align-items-center pt-5">
-            <Col lg="8" md="10">
+          <Row className="align-items-center">
+            <Col xl="8" lg="9" md="12">
               <div className="title-heading">
                 <h1 className="heading mb-3">The best place to run<br /> Machine Learning in production.</h1>
-                <p className="para-desc text-muted pr-5">
+                <p className="para-desc text-muted">
                   <strong>TeachableHub</strong> is a fully-managed platform bringing ML teams together to deploy, serve, and share impactful models as public or private APIs(a.k.a. Teachables) with ZERO MLOps, seamless scalability, and no costly infrastructure.
                 </p>
-                <div className="th-header-buttons mt-4 pt-2">
+                <div className="th-header-buttons mt-5">
                   <Link href="/#early-access">
                     <a className="btn btn-lg btn-primary th-btn">
                       SIGN UP FOR EARLY ACCESS

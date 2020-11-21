@@ -2,8 +2,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Container } from "reactstrap";
 
-import sashidoLogo from "@assets/img/sashido-logo.svg";
-
 const navItems = [
   { id: 1, idnm: "product", navheading: "Product" },
   { id: 2, idnm: "pricing", navheading: "Pricing" },
@@ -47,7 +45,7 @@ const NavbarPage = () => {
             <a className="logo">teachable<span>hub</span></a>
           </Link>
           <a href="https://www.sashido.io" className="text-center creators" target="_blank" rel="noreferrer">
-            From the creators of <img src={sashidoLogo} height="14" />
+            From the creators of <img src="/assets/images/sashido-logo.svg" height="14" />
           </a>
         </div>
         <div id="navigation" style={{ display: state.isOpen ? "block" : "none" }}>

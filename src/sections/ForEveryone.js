@@ -1,13 +1,10 @@
-import Link from 'next/link';
 import { Container, Row, Col } from 'reactstrap';
-
-import img1 from "@assets/img/for-everyone.png";
 
 const ForEveryone = () => {
   return (
     <Container>
       <Row className="justify-content-center">
-        <Col xs={12} className="text-center">
+        <Col md="10" sm="12" className="text-center">
           <div className="section-title mt-5 mb-4 pb-2">
             <h3 className="title mb-4">TeachbleHub is for everyone!</h3>
             <p className="text-muted para-desc mx-auto mb-0">
@@ -19,7 +16,7 @@ const ForEveryone = () => {
       <Row className="justify-content-center mt-5">
         <Col sm="10">
           <Row className="align-items-center">
-            <img src={img1} className="img-fluid rounded" alt="" />
+            <img src="/assets/images/for-everyone.png" className="img-fluid rounded" alt="" />
           </Row>
         </Col>
       </Row>

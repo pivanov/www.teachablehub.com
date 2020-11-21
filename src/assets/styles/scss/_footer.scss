@@ -9,7 +9,7 @@
 
     .logo-footer {
         color: #fff;
-        font-size: 22px;
+        font-size: 24px;
         letter-spacing: 1px;
         text-transform: uppercase;
 
@@ -68,7 +68,7 @@
                 transition: all 0.5s ease;
 
                 &:hover {
-                    color: lighten($gray-500, 20%);
+                    color: #fff !important;
                 }
             }
 
