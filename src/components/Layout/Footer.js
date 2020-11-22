@@ -172,7 +172,7 @@ const Footer = () => {
                   {
                     navItems.map((item) =>
                       <li key={item.id}>
-                        <Link href={"#" + item.idnm}>
+                        <Link href={"/#" + item.idnm}>
                           <a className="text-muted">{item.navheading}
                           </a>
                         </Link>
