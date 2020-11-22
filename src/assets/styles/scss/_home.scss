@@ -156,6 +156,10 @@
 }
 
 @include media-breakpoint-down(sm) {
+  .bg-gradient {
+    display: none;
+  }
+
   .section-how-it-works {
     .img-fluid {
       display: none;
