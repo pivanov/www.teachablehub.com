@@ -46,7 +46,7 @@ const Pricing = () => {
         <Row className="justify-content-center">
           {
             planFeatures.map((pricing, key) =>
-              <Col md={6} xs={12} key={key} className="mt-4 pt-2">
+              <Col xl={5} lg={6} md={7} xs={12} key={key} className="mt-4 pt-2">
                 <Card className="pricing-rates business-rate shadow bg-light rounded text-center border-0">
                   <CardBody className="pt-4 rounded">
                     <div className="badge badge-success mb-2">{pricing.id === 1 ? "Free" : "Coming soon"}</div>
