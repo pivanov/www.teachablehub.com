@@ -1,4 +1,5 @@
-import { Container, Row, Col } from 'reactstrap';
+import Image from "next/image";
+import { Container, Row, Col } from "reactstrap";
 
 const ForEveryone = () => {
   return (
@@ -16,7 +17,13 @@ const ForEveryone = () => {
       <Row className="justify-content-center mt-5">
         <Col sm="10">
           <Row className="align-items-center">
-            <img src="/assets/images/for-everyone.png" className="img-fluid rounded" alt="" />
+            <Image
+              src="/assets/images/for-everyone.png"
+              alt="TeachbleHub is for everyone!"
+              className="img-fluid rounded"
+              width={800}
+              height={450}
+            />
           </Row>
         </Col>
       </Row>

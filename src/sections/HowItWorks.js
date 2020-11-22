@@ -1,23 +1,11 @@
-import { useState } from 'react';
-import Link from 'next/link';
+import Link from "next/link";
+import Image from "next/image";
 import { Container, Row, Col } from "reactstrap";
-import FeatherIcon from 'feather-icons-react';
+import FeatherIcon from "feather-icons-react";
 
 import SectionTitle from "@components/SectionTitle";
 
 const HowItWorks = () => {
-  const [state, setState] = useState({
-    activeTab: '1',
-  });
-
-  const toggleTab = (tab) => {
-    if (state.activeTab !== tab) {
-      setState({
-        activeTab: tab
-      });
-    }
-  }
-
   return (
     <Container className="section-how-it-works pt-5">
       <Row className="justify-content-center">
@@ -30,7 +18,13 @@ const HowItWorks = () => {
       <Container>
         <Row className="align-items-center">
           <Col lg={6} md={6}>
-            <img src="/assets/images/how-it-works-1.png" className="img-fluid rounded" alt="Deploy in Seconds" />
+            <Image
+              src="/assets/images/how-it-works-1.png"
+              className="img-fluid rounded"
+              alt="Deploy in Seconds"
+              width={1110}
+              height={680}
+            />
           </Col>
 
           <Col lg={6} md={6} className="mt-4 mt-sm-0 pt-2 pt-sm-0">
@@ -62,7 +56,13 @@ const HowItWorks = () => {
           </Col>
 
           <Col lg={6} md={6}>
-            <img src="/assets/images/how-it-works-2.png" className="img-fluid rounded" alt="Serve at Scale" />
+            <Image
+              src="/assets/images/how-it-works-2.png"
+              className="img-fluid rounded"
+              alt="Serve at Scale"
+              width={1110}
+              height={680}
+            />
           </Col>
         </Row>
       </Container>
@@ -70,7 +70,13 @@ const HowItWorks = () => {
       <Container>
         <Row className="align-items-center">
           <Col lg={6} md={6}>
-            <img src="/assets/images/how-it-works-3.png" className="img-fluid rounded" alt="Manage &amp; Collaborate" />
+            <Image
+              src="/assets/images/how-it-works-3.png"
+              className="img-fluid rounded"
+              alt="Manage &amp; Collaborate"
+              width={1110}
+              height={680}
+            />
           </Col>
 
           <Col lg={6} md={6} className="mt-4 mt-sm-0 pt-2 pt-sm-0">
@@ -102,7 +108,13 @@ const HowItWorks = () => {
           </Col>
 
           <Col lg={6} md={6}>
-            <img src="/assets/images/how-it-works-4.png" className="img-fluid rounded" alt="Use on Any Platform" />
+            <Image
+              src="/assets/images/how-it-works-4.png"
+              className="img-fluid rounded"
+              alt="Use on Any Platform"
+              width={1110}
+              height={680}
+            />
           </Col>
         </Row>
       </Container>

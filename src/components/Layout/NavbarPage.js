@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import Link from 'next/link';
+import { useState } from "react";
+import Link from "next/link";
 import { Container } from "reactstrap";
 
 const navItems = [
@@ -45,7 +45,12 @@ const NavbarPage = () => {
             <a className="logo">teachable<span>hub</span></a>
           </Link>
           <a href="https://www.sashido.io" className="text-center creators" target="_blank" rel="noreferrer">
-            From the creators of <img src="/assets/images/sashido-logo.svg" height="14" />
+            From the creators of
+            <img
+              src="/assets/images/sashido-logo.svg"
+              alt="SashiDo.io"
+              height={14}
+            />
           </a>
         </div>
         <div id="navigation" style={{ display: state.isOpen ? "block" : "none" }}>
