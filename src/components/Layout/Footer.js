@@ -11,7 +11,7 @@ const navItems = [
 ];
 
 
-const runAnimation = (button) => {
+const runAnimation = (button, cb) => {
   const getVar = variable => getComputedStyle(button).getPropertyValue(variable);
   if (!button.classList.contains('active')) {
 
@@ -84,7 +84,7 @@ const runAnimation = (button) => {
               duration: .3,
               onComplete() {
                 button.classList.remove('active');
-                // cb();
+                if (cb) cb();
               }
             })
           }, 1000)
@@ -134,9 +134,11 @@ const Footer = () => {
     elEmail.value = "";
 
     const { current: button } = refButton;
-    runAnimation(button);
-
-    console.log('@@@', email);
+    runAnimation(button, () => {
+      setState({
+        btnIsDisabled: true,
+      });
+    });
 
     // try {
     //   const r = await axios.post("https://api.teachablehub.com/v1/earlyaccess", {
