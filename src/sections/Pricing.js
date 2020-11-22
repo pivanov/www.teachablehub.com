@@ -77,7 +77,7 @@ const Pricing = () => {
       </Container>
       <Container id="early-access" className="pt-5">
         <Row className="justify-content-center">
-          <Col md={10} xs={12} className="mt-4 pt-2">
+          <Col lg={8} md={10} xs={12} className="mt-4 pt-2">
             <div className="text-center">
               <SectionTitle
                 title="Sign up for early access now"

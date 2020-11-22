@@ -140,14 +140,14 @@ const Footer = () => {
       });
     });
 
-    // try {
-    //   const r = await axios.post("https://api.teachablehub.com/v1/earlyaccess", {
-    //     email,
-    //     only_newsletter: true
-    //   });
-    // } catch (e) {
-    //   console.error(e);
-    // }
+    try {
+      const r = await axios.post("https://api.teachablehub.com/v1/earlyaccess/", {
+        email,
+        only_newsletter: true
+      });
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   return (
