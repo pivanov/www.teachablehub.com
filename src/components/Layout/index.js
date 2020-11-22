@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import ScrollUpButton from "react-scroll-up-button";
-import FeatherIcon from 'feather-icons-react';
+// import ScrollUpButton from "react-scroll-up-button";
+// import FeatherIcon from 'feather-icons-react';
 import { ScrollToHash } from "@utils/helpers";
 
 import NavbarPage from "./NavbarPage";
@@ -18,9 +18,9 @@ const Layout = ({ children }) => {
 
       <Footer />
 
-      <ScrollUpButton ContainerClassName="classForContainer" style={{ height: 36, width: 36 }} TransitionClassName="classForTransition">
+      {/* <ScrollUpButton ContainerClassName="classForContainer" style={{ height: 36, width: 36 }} TransitionClassName="classForTransition">
         <i><FeatherIcon icon="arrow-up" className="icons" /></i>
-      </ScrollUpButton>
+      </ScrollUpButton> */}
     </>
   );
 }

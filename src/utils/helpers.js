@@ -31,7 +31,20 @@ export const ScrollToHash = () => {
     const links = document.links;
 
     for (const link of links) {
-      if (link.hash.startsWith("#")) {
+      const { hash } = link;
+      if (hash === "#chat") {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const { message } = link.dataset;
+          if (message) {
+            $crisp.push(["set", "message:text", [message]])
+          }
+
+          $crisp.push(["do", "chat:open"]);
+        });
+      }
+
+      if (hash.startsWith("#") && hash !== "#chat") {
         link.addEventListener("click", clickHandler);
       }
     }

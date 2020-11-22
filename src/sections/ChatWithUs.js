@@ -12,10 +12,8 @@ const ChatWithUs = () => {
               title="Couldn't find answers to any of your questions?"
               desc="There is a way to find an answer to all of your questions. Our team is here to help!"
             />
-            <div className="">
-              <Link href="/#questions">
-                <a className="btn btn-primary">Chat With Us</a>
-              </Link>
+            <div>
+              <a href="#chat" className="btn btn-primary" data-message="Couldn't find answer about ">Chat With Us</a>
             </div>
           </div>
         </Col>

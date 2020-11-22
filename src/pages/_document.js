@@ -48,6 +48,11 @@ class MyDocument extends Document {
             gtag('config', 'UA-180733216-1');
           `}} />
           <script type="text/javascript" src="https://www.googleoptimize.com/optimize.js?id=OPT-M2G4HWF"></script>
+          <script type="text/javascript" dangerouslySetInnerHTML={{
+            __html: `
+              window.$crisp=[];window.CRISP_WEBSITE_ID="ba435729-3fe2-4678-962d-758aebbf52fa";(function(){d = document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+            `
+          }} />
         </Head>
         <body>
           <Main />

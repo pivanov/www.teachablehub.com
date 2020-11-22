@@ -23,7 +23,7 @@ const Section = () => {
                     </a>
                   </Link>
                   <Link href="/#questions">
-                    <a className="th-header-link">
+                    <a href="#chat" className="th-header-link" data-message="I need to talk with an expert about">
                       Questions? Talk to an expert!
                     </a>
                   </Link>
