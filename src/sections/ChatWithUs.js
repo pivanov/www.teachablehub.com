@@ -9,8 +9,8 @@ const ChatWithUs = () => {
         <Col xs="12">
           <div className="text-center">
             <SectionTitle
-              title="Couldn't find answers to any of your questions?"
-              desc="There is a way to find an answer to all of your questions. Our team is here to help!"
+              title="Have some questions?"
+              desc="Talk to our experts and get them answered right away!"
             />
             <div>
               <a href="#chat" className="btn btn-primary" data-message="Couldn't find answer about ">Chat With Us</a>

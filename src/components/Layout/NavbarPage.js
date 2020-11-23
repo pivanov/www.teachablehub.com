@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Container } from "reactstrap";
 
 const navItems = [
-  { id: 1, idnm: "product", navheading: "Product" },
+  { id: 1, idnm: "how-it-works", navheading: "Product" },
   { id: 2, idnm: "pricing", navheading: "Pricing" },
 ];
 
@@ -16,7 +16,7 @@ const NavbarPage = () => {
     setState(prevState => ({ isOpen: !prevState.isOpen }));
   }
   const menu = navItems.map((item) => (
-    <li key={item.idnm} className={item.navheading === "Product" ? "active" : ""} >
+    <li key={item.idnm} >
       <a href={"/#" + item.idnm}>{item.navheading}</a>
     </li>
   ));

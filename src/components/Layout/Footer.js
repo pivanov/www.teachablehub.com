@@ -7,7 +7,7 @@ import { validateEmailFormat } from "@utils/helpers";
 import { Container, Row, Col, Input, Label } from "reactstrap";
 
 const navItems = [
-  { id: 2, idnm: "product", navheading: "Product" },
+  { id: 2, idnm: "how-it-works", navheading: "Product" },
   { id: 3, idnm: "pricing", navheading: "Pricing" },
 ];
 
