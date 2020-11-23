@@ -1,7 +1,7 @@
 import { useRef } from "react";
-import { useSetState } from '@utils/hooks';
-import Link from "next/link";
 import axios from "axios";
+import { useSetState, useKeyPress } from '@utils/hooks';
+import Link from "next/link";
 import gsap from 'gsap';
 import { validateEmailFormat } from "@utils/helpers";
 import { Container, Row, Col, Input, Label } from "reactstrap";
@@ -124,12 +124,13 @@ const Footer = () => {
   const refButton = useRef();
   const refEmail = useRef();
 
+  const pressEnter = useKeyPress("Enter");
+
   const [state, setState] = useSetState({
     btnIsDisabled: true,
   });
 
-  const handleSubscribe = async (e) => {
-    e.preventDefault();
+  const handleSubscribe = async () => {
     const { current: elEmail } = refEmail;
     const email = elEmail.value;
     elEmail.value = "";
@@ -149,6 +150,16 @@ const Footer = () => {
     } catch (e) {
       // console.error(e);
     }
+  }
+
+  if (pressEnter && !state.btnIsDisabled) {
+    handleSubscribe();
+  }
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+
+    handleSubscribe();
   }
 
   return (
@@ -216,10 +227,7 @@ const Footer = () => {
                   </div>
                 </Col>
                 <Col lg="12">
-                  {/* <a className="btn btn-primary btn-block shadow-none" onClick={handleSubscribe}>
-                    Subscribe
-                  </a> */}
-                  <button ref={refButton} className="emailButton" disabled={state.btnIsDisabled} onClick={handleSubscribe}>
+                  <button ref={refButton} className="emailButton" disabled={state.btnIsDisabled} onClick={handleClick}>
                     <span className="default">Subscribe</span>
                     <span className="success text-muted">Successfully subscribed!</span>
                     <div className="left"></div>

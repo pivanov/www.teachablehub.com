@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import axios from "axios";
-import { useSetState } from '@utils/hooks';
+import { useSetState, useKeyPress } from '@utils/hooks';
 import { validateEmailFormat } from "@utils/helpers";
 import { Container, Row, Col, Card, CardBody, Button } from 'reactstrap';
 import FeatherIcon from 'feather-icons-react';
@@ -43,12 +43,13 @@ const Pricing = () => {
   const refEmail = useRef();
   const refSuccess = useRef();
 
+  const pressEnter = useKeyPress("Enter");
+
   const [state, setState] = useSetState({
     btnIsDisabled: true,
   });
 
-  const handleSignUp = async (e) => {
-    e.preventDefault();
+  const handleSignUp = async () => {
     const { current: elEmail } = refEmail;
     const email = elEmail.value;
     elEmail.value = "";
@@ -78,6 +79,16 @@ const Pricing = () => {
     }
   }
 
+  if (pressEnter && !state.btnIsDisabled) {
+    handleSignUp();
+  }
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+
+    handleSignUp();
+  }
+
   return (
     <>
       <Container>
@@ -94,11 +105,6 @@ const Pricing = () => {
                     <div className="badge badge-success mb-2">{pricing.id === 1 ? "Free" : "Coming soon"}</div>
                     <h3 className="title text-uppercase mb-2">{pricing.title}</h3>
                     <p className="text-small text-left text-muted pl-2 mb-4">{pricing.desc}</p>
-                    {/* <div className="d-flex justify-content-center mb-4">
-                        <span className="h4 mb-0 mt-2">$</span>
-                        <span className="price h1 mb-0">0</span>
-                        <span className="h4 align-self-end mb-1">/mo</span>
-                      </div> */}
 
                     <ul className="feature list-unstyled pl-2 text-left">
                       {
@@ -148,7 +154,7 @@ const Pricing = () => {
                         className="submitBnt"
                         type="button"
                         id="newssubscribebtn"
-                        onClick={handleSignUp}
+                        onClick={handleClick}
                         disabled={state.btnIsDisabled}
                       >
                         Sign Up
