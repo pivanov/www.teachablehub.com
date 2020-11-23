@@ -16,7 +16,7 @@ const ForEveryone = () => {
       </Row>
       <Row className="justify-content-center mt-5">
         <Col sm="10">
-          <Row className="align-items-center">
+          <Row className="align-items-center justify-content-center">
             <Image
               src="/assets/images/for-everyone.png"
               alt="TeachbleHub is for everyone!"

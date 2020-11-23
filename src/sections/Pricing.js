@@ -158,7 +158,7 @@ const Pricing = () => {
                         disabled={state.btnIsDisabled}
                       >
                         Sign Up
-                    </Button>
+                      </Button>
                     </div>
                   </div>
                   <p className="th-text-small text-muted mt-2 text-left pl-3">We respect your privacy and we’ll never share your details.</p>
