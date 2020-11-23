@@ -143,6 +143,7 @@
       transform: rotate(calc(var(--rotate) * -1deg)) scale(var(--success-scale)) translateZ(0);
       opacity: var(--success-opacity);
       color: var(--success);
+      white-space: nowrap;
     }
   }
 }

@@ -1,5 +1,8 @@
-import Link from 'next/link';
-import { Container, Row, Col, Nav, NavItem, NavLink, TabContent, TabPane, Card, CardBody, Button } from 'reactstrap';
+import { useRef } from "react";
+import axios from "axios";
+import { useSetState } from '@utils/hooks';
+import { validateEmailFormat } from "@utils/helpers";
+import { Container, Row, Col, Card, CardBody, Button } from 'reactstrap';
 import FeatherIcon from 'feather-icons-react';
 import SectionTitle from "@components/SectionTitle";
 
@@ -36,6 +39,45 @@ const planFeatures = [{
 }];
 
 const Pricing = () => {
+  const refForm = useRef();
+  const refEmail = useRef();
+  const refSuccess = useRef();
+
+  const [state, setState] = useSetState({
+    btnIsDisabled: true,
+  });
+
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    const { current: elEmail } = refEmail;
+    const email = elEmail.value;
+    elEmail.value = "";
+
+    const { current: formEl } = refForm;
+    const { current: successEl } = refSuccess;
+
+    formEl.style.opacity = 0;
+    setTimeout(() => {
+      successEl.classList.add("done");
+      setTimeout(() => {
+        successEl.classList.remove("done");
+        formEl.style.opacity = 1;
+      }, 3000);
+    }, 400);
+
+    setState({
+      btnIsDisabled: true,
+    });
+
+    try {
+      const r = await axios.post("https://api.teachablehub.com/v1/earlyaccess/", {
+        email,
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
   return (
     <>
       <Container>
@@ -83,13 +125,42 @@ const Pricing = () => {
                 title="Sign up for early access now"
                 desc="and get a FREE consultation from our ML deployment experts!"
               />
-              <div className="input-group input-group-lg" >
-                <input type="text" className="form-control" aria-label="Large" placeholder="Your email ..." required="" />
-                <div className="input-group-append">
-                  <Button color="primary" className="submitBnt" onClick={() => { }} type="button" id="newssubscribebtn">Sign Up</Button>
+              <div className="formHolder">
+                <div ref={refForm} className="th-form">
+                  <div className="input-group input-group-lg">
+                    <input
+                      ref={refEmail}
+                      type="text"
+                      className="form-control"
+                      aria-label="Large"
+                      placeholder="Your email ..."
+                      name="email"
+                      onChange={({ target }) => {
+                        const email = target.value;
+                        setState({
+                          btnIsDisabled: (email === "" || !validateEmailFormat(email))
+                        });
+                      }}
+                    />
+                    <div className="input-group-append">
+                      <Button
+                        color="primary"
+                        className="submitBnt"
+                        type="button"
+                        id="newssubscribebtn"
+                        onClick={handleSignUp}
+                        disabled={state.btnIsDisabled}
+                      >
+                        Sign Up
+                    </Button>
+                    </div>
+                  </div>
+                  <p className="th-text-small text-muted mt-2 text-left pl-3">We respect your privacy and we’ll never share your details.</p>
+                </div>
+                <div ref={refSuccess} className="success-animation">
+                  <svg className="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none" /><path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" /></svg>
                 </div>
               </div>
-              <p className="th-text-small text-muted mt-2 text-left pl-3">We respect your privacy and we’ll never share your details.</p>
             </div>
           </Col>
         </Row>

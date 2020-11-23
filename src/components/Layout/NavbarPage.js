@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useSetState } from '@utils/hooks';
 import Link from "next/link";
 import { Container } from "reactstrap";
 
@@ -8,7 +8,7 @@ const navItems = [
 ];
 
 const NavbarPage = () => {
-  const [state, setState] = useState({
+  const [state, setState] = useSetState({
     isOpen: false,
   });
 

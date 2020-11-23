@@ -1,0 +1,90 @@
+.formHolder {
+  position: relative;
+}
+
+.th-form {
+  transition: all .4s;
+}
+
+.success-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+  transform-origin: 50% 50% !important;
+  opacity: 0;
+  transition: all .4s;
+
+  .checkmark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    stroke-width: 2;
+    stroke: #4bb71b;
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px #4bb71b;
+  }
+
+  .checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #4bb71b;
+    fill: #fff;
+
+  }
+
+  .checkmark__check {
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+  }
+
+  &.done {
+    opacity: 1;
+
+    .checkmark {
+      animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+      transform-origin: 0 0 !important;
+    }
+
+    .checkmark__circle {
+      animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+    }
+
+    .checkmark__check {
+      animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+    }
+  }
+}
+
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+
+  0%,
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+
+  50% {
+    transform: scale(1.2) translate(-50%, -50%);
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #4bb71b;
+  }
+}

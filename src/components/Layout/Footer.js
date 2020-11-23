@@ -1,4 +1,5 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import { useSetState } from '@utils/hooks';
 import Link from "next/link";
 import axios from "axios";
 import gsap from 'gsap';
@@ -87,7 +88,7 @@ const runAnimation = (button, cb) => {
                 if (cb) cb();
               }
             })
-          }, 1000)
+          }, 3000)
         }
       }]
     })
@@ -123,11 +124,11 @@ const Footer = () => {
   const refButton = useRef();
   const refEmail = useRef();
 
-  const [state, setState] = useState({
+  const [state, setState] = useSetState({
     btnIsDisabled: true,
   });
 
-  const subscribeHandler = async (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
     const { current: elEmail } = refEmail;
     const email = elEmail.value;
@@ -146,7 +147,7 @@ const Footer = () => {
         only_newsletter: true
       });
     } catch (e) {
-      console.error(e);
+      // console.error(e);
     }
   }
 
@@ -215,12 +216,12 @@ const Footer = () => {
                   </div>
                 </Col>
                 <Col lg="12">
-                  {/* <a className="btn btn-primary btn-block shadow-none" onClick={subscribeHandler}>
+                  {/* <a className="btn btn-primary btn-block shadow-none" onClick={handleSubscribe}>
                     Subscribe
                   </a> */}
-                  <button ref={refButton} className="emailButton" disabled={state.btnIsDisabled} onClick={subscribeHandler}>
+                  <button ref={refButton} className="emailButton" disabled={state.btnIsDisabled} onClick={handleSubscribe}>
                     <span className="default">Subscribe</span>
-                    {/* <span className="success text-muted">Sent</span> */}
+                    <span className="success text-muted">Successfully subscribed!</span>
                     <div className="left"></div>
                     <div className="right"></div>
                   </button>
