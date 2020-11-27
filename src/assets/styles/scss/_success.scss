@@ -3,8 +3,37 @@
 }
 
 .th-form {
+  max-height: 1000px;
+  overflow: hidden;
   transition: all .4s;
 }
+
+.th-questions {
+  p {
+    font-size: 18px;
+
+    >span {
+      color: #FF1154;
+      margin-right: 4px;
+    }
+  }
+}
+
+.th-signup {
+  display: flex;
+  flex-direction: column;
+
+  .btn {
+    width: auto !important;
+  }
+}
+
+.th-questions-other {
+  &+textarea {
+    margin-top: 10px;
+  }
+}
+
 
 .success-animation {
   position: absolute;
@@ -16,6 +45,7 @@
   transform-origin: 50% 50% !important;
   opacity: 0;
   transition: all .4s;
+  pointer-events: none;
 
   .checkmark {
     position: absolute;

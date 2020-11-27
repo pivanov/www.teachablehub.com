@@ -30,6 +30,7 @@ export const LoaderStyles = createGlobalStyle`
     transform: translate(-50%, -50%);
     width: 120px;
     height: 60px;
+    pointer-events: none;
 
     div,
     span {
