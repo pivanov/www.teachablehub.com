@@ -1,9 +1,10 @@
 import { useRef } from "react";
 import axios from "axios";
-import { useSetState, useKeyPress } from '@utils/hooks';
 import Link from "next/link";
 import gsap from 'gsap';
+import { useSetState, useKeyPress } from '@utils/hooks';
 import { validateEmailFormat } from "@utils/helpers";
+import GoogleTagManager from "@utils/GoogleTagManager";
 import { Container, Row, Col, Input, Label } from "reactstrap";
 
 const navItems = [
@@ -146,6 +147,13 @@ const Footer = () => {
       const r = await axios.post("https://api.teachablehub.com/v1/earlyaccess/", {
         email,
         only_newsletter: true
+      });
+
+      GoogleTagManager({
+        data: {
+          event: 'registered',
+          pageCategory: 'sign-up',
+        },
       });
     } catch (e) {
       // console.error(e);

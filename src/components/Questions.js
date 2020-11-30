@@ -2,6 +2,7 @@ import { useRef } from "react";
 import axios from "axios";
 import { useSetState } from '@utils/hooks';
 import { Button } from 'reactstrap';
+import GoogleTagManager from "@utils/GoogleTagManager";
 import { validateEmailFormat, getOffset } from "@utils/helpers";
 
 const schema = [
@@ -220,7 +221,6 @@ const buildForm = (state, refEmail, { onChangeHandler, checkboxOnChangeHandler }
   return template;
 }
 
-
 const Questions = () => {
   const refForm = useRef();
   const refEmail = useRef();
@@ -391,6 +391,13 @@ const Questions = () => {
       const r = await axios.post("https://api.teachablehub.com/v1/earlyaccess/", {
         email,
         survey,
+      });
+
+      GoogleTagManager({
+        data: {
+          event: 'registered',
+          pageCategory: 'sign-up',
+        },
       });
     } catch (e) {
       // console.error(e);

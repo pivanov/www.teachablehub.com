@@ -8,9 +8,9 @@ const Teachable = dynamic(() => import("../sections/Teachable"));
 const HowItWorks = dynamic(() => import("../sections/HowItWorks"));
 const ForEveryone = dynamic(() => import("../sections/ForEveryone"));
 const ChatWithUs = dynamic(() => import("../sections/ChatWithUs"));
-const Pricing2 = dynamic(() => import("../sections/Pricing2"));
+const Pricing = dynamic(() => import("../sections/Pricing"));
 
-const HomePage = () => {
+const HomePage = ({ doc, menu }) => {
   useEffect(() => {
     if (process.browser) {
       window.addEventListener("scroll", scrollNavigation, true);
@@ -21,7 +21,7 @@ const HomePage = () => {
     }
 
     return () => window.removeEventListener("scroll", scrollNavigation, true);
-  }, []);
+  }, [doc, menu]);
 
   const scrollNavigation = () => {
     var doc = document.documentElement;
@@ -83,7 +83,7 @@ const HomePage = () => {
       </section>
 
       <section className="section pb-5 bg-light" id="pricing">
-        <Pricing2 />
+        <Pricing />
       </section>
       <div className="position-relative">
         <div className="shape overflow-hidden text-white">
@@ -98,6 +98,28 @@ const HomePage = () => {
       </section>
     </>
   );
+  // if (doc && doc.data) {
+  //   return null
+  // }
+
 }
+
+// export async function getStaticProps({ preview = null, previewData = {} }) {
+
+//   const { ref } = previewData;
+
+//   const client = Client()
+
+//   const doc = await client.getSingle("homepage", ref ? { ref } : null) || {}
+//   const menu = await client.getSingle("menu", ref ? { ref } : null) || {}
+
+//   return {
+//     props: {
+//       doc,
+//       menu,
+//       preview,
+//     }
+//   }
+// }
 
 export default HomePage
