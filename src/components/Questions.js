@@ -152,7 +152,7 @@ const buildForm = (state, refEmail, { onChangeHandler, checkboxOnChangeHandler }
     if (q.type === "checkbox") {
       if (q.options) {
         const { allowMultiple } = q;
-        const current = (state.answeres[`q-${q.id}`] || {}).answere || [];
+        const current = (state.answeres[`q-${q.id}`] || {}).answer || [];
         content = q.options.map((item) => {
           return (
             <div key={item.value} className="custom-control custom-checkbox custom-control th-questions-other">
@@ -178,8 +178,8 @@ const buildForm = (state, refEmail, { onChangeHandler, checkboxOnChangeHandler }
     if (
       (
         state.answeres[`q-${q.id}`] &&
-        state.answeres[`q-${q.id}`].answere &&
-        state.answeres[`q-${q.id}`].answere.includes("Other")
+        state.answeres[`q-${q.id}`].answer &&
+        state.answeres[`q-${q.id}`].answer.includes("Other")
       ) ||
       q.type === "text"
     ) {
@@ -260,7 +260,7 @@ const Questions = () => {
   }
 
   const onChangeHandler = (e) => {
-    const { value: answere, dataset } = e.target;
+    const { value: answer, dataset } = e.target;
     const { id, question, subanswer } = dataset;
 
     setState(state => {
@@ -269,19 +269,19 @@ const Questions = () => {
         valid: false
       };
 
-      const current = ((state.answeres[`q-${id}`] || {}).answere || []);
+      const current = ((state.answeres[`q-${id}`] || {}).answer || []);
 
       if (subanswer) {
-        obj.subAnswere = answere;
-        obj.answere = [...(current.filter(f => f !== "Other")), "Other"];
-        obj.valid = !!(obj.subAnswere && obj.answere.length > 0);
+        obj.subAnswer = answer;
+        obj.answer = [...(current.filter(f => f !== "Other")), "Other"];
+        obj.valid = !!(obj.subAnswer && obj.answer.length > 0);
       } else {
-        obj.answere = [answere];
-        if (answere !== "Other") {
-          obj.valid = !!(obj.answere.length > 0);
+        obj.answer = [answer];
+        if (answer !== "Other") {
+          obj.valid = !!(obj.answer.length > 0);
           if (e.target.type === "email") {
             obj.isEmail = true;
-            obj.valid = validateEmailFormat(answere);
+            obj.valid = validateEmailFormat(answer);
           }
         }
       }
@@ -293,41 +293,41 @@ const Questions = () => {
   }
 
   const checkboxOnChangeHandler = (e) => {
-    const { value: answere, checked, dataset } = e.target;
+    const { value: answer, checked, dataset } = e.target;
     const { id, question, multiple, subanswer } = dataset;
 
     setState(state => {
       const obj = {
         ...(state.answeres[`q-${id}`]),
         question,
-        subAnswere: null,
+        subAnswer: null,
         valid: false,
       };
 
       let current = [];
       if (multiple === "true") {
-        current = ((state.answeres[`q-${id}`] || {}).answere || []);
+        current = ((state.answeres[`q-${id}`] || {}).answer || []);
       }
 
       if (subanswer) {
-        obj.subAnswere = answere;
-        obj.answere = [...current, "Other"];
-        obj.valid = !!(obj.subAnswere && obj.answere.length > 0);
+        obj.subAnswer = answer;
+        obj.answer = [...current, "Other"];
+        obj.valid = !!(obj.subAnswer && obj.answer.length > 0);
       } else {
         if (checked) {
-          obj.answere = [...current, answere];
+          obj.answer = [...current, answer];
         } else {
-          obj.answere = current.filter(f => f !== answere);
+          obj.answer = current.filter(f => f !== answer);
         }
 
-        if (obj.answere.length > 0) {
-          obj.valid = !!(obj.answere.length > 0);
+        if (obj.answer.length > 0) {
+          obj.valid = !!(obj.answer.length > 0);
         }
 
       }
 
-      if (obj.answere.includes("Other")) {
-        obj.valid = !!(obj.subAnswere && obj.subAnswere.length > 2);
+      if (obj.answer.includes("Other")) {
+        obj.valid = !!(obj.subAnswer && obj.subAnswer.length > 2);
       }
 
       state.answeres[`q-${id}`] = obj;
@@ -378,11 +378,11 @@ const Questions = () => {
       const survey = {};
       Object.keys(state.answeres).forEach((a) => {
         // console.log('@@@', s.answeres[a]);
-        const { question, answere, subAnswere: other, isEmail } = state.answeres[a];
+        const { question, answer, subAnswer: other, isEmail } = state.answeres[a];
         if (!isEmail) {
           survey[a] = {
             question,
-            answere,
+            answer,
             ...(other && { other })
           }
         }
