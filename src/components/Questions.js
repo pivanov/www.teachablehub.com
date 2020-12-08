@@ -1,127 +1,15 @@
-import { useRef } from "react";
+import { useRouter } from "next/router";
+import { useRef, useEffect } from "react";
 import axios from "axios";
 import { useSetState } from '@utils/hooks';
 import { Button } from 'reactstrap';
 import GoogleTagManager from "@utils/GoogleTagManager";
 import { validateEmailFormat, getOffset } from "@utils/helpers";
 
-const schema = [
-  {
-    id: 1,
-    name: "What is your current job title?",
-    type: "select",
-    required: true,
-    options: [
-      {
-        value: "Data Scientist",
-      },
-      {
-        value: "Data Analyst",
-      },
-      {
-        value: "Data Architect",
-      },
-      {
-        value: "Data Engineer",
-      },
-      {
-        value: "Machine Learning Engineer",
-      },
-      {
-        value: "Backend developer",
-      },
-      {
-        value: "DevOps",
-      },
-      {
-        value: "MLOps",
-      },
-      {
-        value: "C-level executive",
-      },
-      {
-        value: "Professor/Educator",
-      },
-      {
-        value: "Student",
-      },
-      {
-        value: "Other",
-        options: [
-          {
-            type: "text",
-          }
-        ]
-      },
-    ]
-  },
-  {
-    id: 2,
-    name: "What best describes what you do?",
-    type: "checkbox",
-    required: true,
-    allowMultiple: true,
-    options: [
-      {
-        value: "Design, create, and manage data architectures",
-      },
-      {
-        value: "Collect and analyze data, research, prototype ML models",
-      },
-      {
-        value: "Monitor and optimize model performance and data accuracy",
-      },
-      {
-        value: "Identify trends in data sets to help solve business problems",
-      },
-      {
-        value: "Build, deploy and maintain ML pipelines in production",
-      },
-      {
-        value: "Build, integrate and set up new development tools and infrastructure",
-      },
-      {
-        value: "Write unit tests and integration tests",
-      },
-      {
-        value: "Manage ML workflows and teams",
-      },
-      {
-        value: "Develop and implement company strategy for using IT and ML rеsources",
-      },
-      {
-        value: "I'm a student learning Computer Science and ML",
-      },
-      {
-        value: "Other",
-        options: [
-          {
-            type: "text"
-          }
-        ]
-      },
-    ]
-  },
-  {
-    id: 3,
-    name: "What company, school, or lab are you affiliated with?",
-    type: "text",
-    required: true,
-  },
-  {
-    id: 4,
-    name: "Your Email",
-    type: "email",
-    required: true,
-  }
-];
-
 const buildForm = (state, refEmail, { onChangeHandler, checkboxOnChangeHandler }) => {
   let template = [];
 
-  // console.log('@@@', state);
-
-  schema.forEach(q => {
+  state.schema.forEach(q => {
     let content;
     let extra;
 
@@ -222,28 +110,53 @@ const buildForm = (state, refEmail, { onChangeHandler, checkboxOnChangeHandler }
 }
 
 const Questions = () => {
+  const router = useRouter();
+
   const refForm = useRef();
   const refEmail = useRef();
   const refSuccess = useRef();
 
-  const defAnsweres = () => {
-    let r = {};
-
-    schema.forEach(({ id, name: question, required, type }) => {
-      r[`q-${id}`] = {
-        question,
-        required,
-        valid: false,
-      }
-    });
-
-    return r;
-  }
+  // const { survey } = router.query;
 
   const [state, setState] = useSetState({
-    answeres: defAnsweres(),
     btnIsDisabled: true,
+    loading: true,
   });
+
+  useEffect(() => {
+    init();
+  }, []);
+
+  const init = async () => {
+    let schema = [{
+      id: 1,
+      name: "Your Email",
+      type: "email",
+      required: true,
+    }]
+
+    try {
+      const { data } = await axios.get("https://api.teachablehub.com/v1/earlyaccess/survey/schema");
+      schema = data.schema;
+    } catch (e) {
+      //
+    }
+
+    setState(state => {
+      let answeres = {};
+      schema.forEach(({ id, name: question, required, type }) => {
+        answeres[`q-${id}`] = {
+          question,
+          required,
+          valid: false,
+        }
+      });
+
+      state.schema = schema;
+      state.answeres = answeres;
+      state.loading = false;
+    });
+  }
 
   if (state.loading) return null;
 
@@ -434,6 +347,5 @@ const Questions = () => {
     </div>
   );
 }
-
 
 export default Questions;
