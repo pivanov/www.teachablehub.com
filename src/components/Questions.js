@@ -13,6 +13,8 @@ const buildForm = (state, refEmail, { onChangeHandler, checkboxOnChangeHandler }
     let content;
     let extra;
 
+    const currentAnswer = (state.answeres[`q-${q.id}`] || {}).answer || [];
+
     if (q.type === "select") {
       if (q.options) {
         const options = q.options.map((item) => {
@@ -26,9 +28,10 @@ const buildForm = (state, refEmail, { onChangeHandler, checkboxOnChangeHandler }
             onChange={onChangeHandler}
             data-id={q.id}
             data-question={q.name}
+            value={currentAnswer[0] || "Please Select"}
           >
             {[
-              <option key="please-select" defaultValue disabled hidden>Please Select</option>,
+              <option key="please-select" defaultValue disabled>Please Select</option>,
               ...options
             ]}
           </select>
@@ -40,7 +43,6 @@ const buildForm = (state, refEmail, { onChangeHandler, checkboxOnChangeHandler }
     if (q.type === "checkbox") {
       if (q.options) {
         const { allowMultiple } = q;
-        const current = (state.answeres[`q-${q.id}`] || {}).answer || [];
         content = q.options.map((item) => {
           return (
             <div key={item.value} className="custom-control custom-checkbox custom-control th-questions-other">
@@ -50,7 +52,7 @@ const buildForm = (state, refEmail, { onChangeHandler, checkboxOnChangeHandler }
                 className="custom-control-input"
                 value={item.value}
                 name={q.id}
-                checked={current.includes(item.value)}
+                checked={currentAnswer.includes(item.value)}
                 onChange={checkboxOnChangeHandler}
                 data-id={q.id}
                 data-question={q.name}
@@ -143,19 +145,24 @@ const Questions = () => {
     }
 
     setState(state => {
-      let answeres = {};
-      schema.forEach(({ id, name: question, required, type }) => {
-        answeres[`q-${id}`] = {
-          question,
-          required,
-          valid: false,
-        }
-      });
-
       state.schema = schema;
-      state.answeres = answeres;
+      state.answeres = defAnsweres(schema);
       state.loading = false;
     });
+  }
+
+  const defAnsweres = (schema) => {
+    let answeres = {};
+
+    schema.forEach(({ id, name: question, required, type }) => {
+      answeres[`q-${id}`] = {
+        question,
+        required,
+        valid: false,
+      }
+    });
+
+    return answeres;
   }
 
   if (state.loading) return null;
@@ -270,7 +277,7 @@ const Questions = () => {
       setTimeout(() => {
         successEl.classList.remove("done");
         setState(state => {
-          state.answeres = defAnsweres();
+          state.answeres = defAnsweres(state.schema);
           state.loading = true;
         }, () => {
           setState(state => {
@@ -290,7 +297,6 @@ const Questions = () => {
     try {
       const survey = {};
       Object.keys(state.answeres).forEach((a) => {
-        // console.log('@@@', s.answeres[a]);
         const { question, answer, subAnswer: other, isEmail } = state.answeres[a];
         if (!isEmail) {
           survey[a] = {
