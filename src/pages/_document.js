@@ -2,6 +2,21 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 import PageLoading from "@components/PageLoading";
 import PrismicScript from "@components/PrismicScript";
 
+
+const authors = `
+/*
+  TeachableHub is here thanks to the very hard work of these folks:
+  ------------------------------------------------------------------------------------
+  Marian Ignev,
+  Pavel Ivanov,
+  Veselina Staneva,
+  Irena Rousseva,
+  Hristo Krastev,
+  and more to come ... btw We are hiring :)
+*/
+`;
+
+
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -53,6 +68,8 @@ class MyDocument extends Document {
               window.$crisp=[];window.CRISP_WEBSITE_ID="ba435729-3fe2-4678-962d-758aebbf52fa";(function(){d = document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
             `
           }} />
+
+          <script dangerouslySetInnerHTML={{ __html: authors }} />
         </Head>
         <body>
           <Main />
