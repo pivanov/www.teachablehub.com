@@ -11,20 +11,22 @@ const Section = () => {
           <Row className="align-items-center">
             <Col xl="8" lg="9" md="12">
               <div className="title-heading">
-                <h1 className="heading mb-3">The best place to run<br /> Machine Learning in production.</h1>
+                <h1 className="heading mb-3">The Machine Learning<br />Deployment Platform for Teams.</h1>
                 <p className="para-desc text-muted">
                   <strong>TeachableHub</strong> is a fully-managed platform bringing ML teams together to deploy, serve, and share impactful models as public or private APIs(a.k.a. Teachables) with ZERO MLOps, seamless scalability, and no costly infrastructure.
                 </p>
                 <div className="th-header-buttons mt-5">
                   <Link href="/#early-access">
-                    <a className="btn btn-lg btn-primary th-btn">
+                    <a href="/#early-access" className="btn btn-lg btn-primary th-btn" style={{ width: 270, padding: '14px 10px' }}>
                       SIGN UP FOR EARLY ACCESS
-                      <span className="f-small pt-1">ALL PUBLIC TEACHABLES ARE FREE!</span>
+                      <span className="f-small f-uppercase pt-1">Deploy models in under 10 minutes!</span>
                     </a>
                   </Link>
-                  <Link href="/#questions">
-                    <a href="#chat" className="th-header-link" data-message="I need to talk with an expert about">
-                      Questions? Talk to an expert!
+
+                  <Link href="/#reviews">
+                    <a href="/#reviews" className="btn btn-lg btn-success th-btn" style={{ marginLeft: 30 }}>
+                      SEE PRODUCT REVIEWS
+                      <span className="f-small f-uppercase pt-1">From Machine Learning Experts!</span>
                     </a>
                   </Link>
                 </div>

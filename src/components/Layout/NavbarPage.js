@@ -31,7 +31,7 @@ const NavbarPage = () => {
     <li key="get">
       <div className="buy-button">
         <a href="/#early-access" className="btn btn-primary">
-          GET EARLY ACCESS
+          BOOK A DEMO
         </a>
       </div>
     </li>

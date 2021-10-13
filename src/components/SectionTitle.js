@@ -3,7 +3,7 @@ import { Row, Col } from "reactstrap";
 const SectionTitle = ({
   isLeft,
   title,
-  desc
+  desc,
 }) => {
   return (
     <>

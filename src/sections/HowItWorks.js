@@ -123,9 +123,9 @@ const HowItWorks = () => {
         <Col lg={12} md={12}>
           <div className="pb-5 text-center">
             <Link href="/#early-access">
-              <a className="btn btn-lg btn-primary">SIGN UP FOR EARLY ACCESS</a>
+              <a className="btn btn-extra-lg btn-primary" style={{ width: 300 }}>REQUEST DEMO NOW</a>
             </Link>
-            <p className="f-small pt-1">ALL PUBLIC TEACHABLES ARE FREE!</p>
+            <p className="f-small pt-1 f-uppercase">Let&apos;s deploy models in under 10 minutes</p>
           </div>
         </Col>
       </Row >

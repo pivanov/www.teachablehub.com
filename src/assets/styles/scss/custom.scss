@@ -3,6 +3,10 @@
     letter-spacing: 1px;
 }
 
+.f-uppercase {
+    text-transform: uppercase;
+}
+
 .Typist {
     display: inline;
 }
@@ -127,4 +131,11 @@ a {
 
 .classForTransition {
     right: 30px;
+}
+
+
+#early-access {
+    h3 {
+        font-size: 32px;
+    }
 }

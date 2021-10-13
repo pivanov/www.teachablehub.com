@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
-import { Client } from "@utils/prismicHelpers";
 import { NextSeo } from 'next-seo';
 
 const Header = dynamic(() => import("../sections/Header"));
@@ -9,6 +8,7 @@ const HowItWorks = dynamic(() => import("../sections/HowItWorks"));
 const ForEveryone = dynamic(() => import("../sections/ForEveryone"));
 const ChatWithUs = dynamic(() => import("../sections/ChatWithUs"));
 const Pricing2 = dynamic(() => import("../sections/Pricing2"));
+const Reviews = dynamic(() => import("../sections/Reviews"));
 
 const HomePage = () => {
   useEffect(() => {
@@ -82,16 +82,7 @@ const HomePage = () => {
         <ForEveryone />
       </section>
 
-      <section className="section pb-5 bg-light" id="pricing">
-        <Pricing2 />
-      </section>
-      <div className="position-relative">
-        <div className="shape overflow-hidden text-white">
-          <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
-          </svg>
-        </div>
-      </div>
+      <Pricing2 />
 
       <section className="section pt-5 pb-5 mb-5" id="chat-with-us">
         <ChatWithUs />
