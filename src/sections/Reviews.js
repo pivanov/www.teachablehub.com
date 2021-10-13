@@ -7,7 +7,7 @@ const Reviews = () => {
     <div className="reviews-carousel">
       <Container>
         <Row className="justify-content-center">
-          <Col md="10" sm="12" className="text-center">
+          <Col className="text-center">
             <div className="section-title mt-5">
               <h3 className="title">Reviews from Machine Learning Experts!</h3>
               <p className="text-muted para-desc mx-auto mb-0">
@@ -17,7 +17,7 @@ const Reviews = () => {
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col md="10" sm="12" className="text-center">
+          <Col className="text-center">
             <Carousel
               showArrows={false}
               showStatus={false}
@@ -62,7 +62,9 @@ const Reviews = () => {
                   </div>
                 </div>
                 <p className="desc">
-                  "This demo forever changed my views regarding the model deployment process. TeachableHub is making the deployment of complex ML models a simple task involving a few lines of code. No need to be a DevOps or MLOps expert anymore.<br />It focuses entirely on teamwork &amp; collaboration, giving the ability to easily involve different stakeholders in the process."
+                  "This demo forever changed my views regarding the model deployment process.<br />
+                  TeachableHub is making the deployment of complex ML models a simple task involving a few lines of code. No need to be a DevOps or MLOps expert anymore.
+                  It focuses entirely on teamwork &amp; collaboration, giving the ability to easily involve different stakeholders in the process."
                 </p>
                 <a href="https://www.linkedin.com/feed/update/urn:li:activity:6847105476782514176/" target="_blank">Read full review</a>
               </div>
@@ -78,7 +80,10 @@ const Reviews = () => {
                   </div>
                 </div>
                 <p className="desc">
-                  "A great point on UX simplicity, ML Engineers tend to over-engineer front-end.<br />It&apos;s really difficult to bring simplicity to a complex solution without loosing perspective, so, congrats!<br />Rolling update release workflow was really easy to set, it works seamlessly.<br />The modular architecture designed for the ML lifecycle is another point for the team."
+                  "A great point on UX simplicity, ML Engineers tend to over-engineer front-end.<br />
+                  It&apos;s really difficult to bring simplicity to a complex solution without loosing perspective, so, congrats!<br />
+                  Rolling update release workflow was really easy to set, it works seamlessly.<br />
+                  The modular architecture designed for the ML lifecycle is another point for the team."
                 </p>
                 <a href="https://www.linkedin.com/feed/update/urn:li:activity:6842988550703616000/?actorCompanyId=69548374" target="_blank">Read full review</a>
               </div>
@@ -94,12 +99,11 @@ const Reviews = () => {
                   </div>
                 </div>
                 <p className="desc">
-                  {/* "Getting ML models into production is far from being easy. Data scientists are not DevOps and ML models can't be treated like software...But after demoing their product I have the feeling that TeachableHub is close to solving this! They have built a platform that tracks every version of your model, cleverly organized in environments and easy to visualize and manage.<br />
-                  Every version comes with automatic documentation and metadata so you can check where the model came from." */}
-
                   "TeachableHub is a platform that tracks every version of your model, cleverly organized in environments.
                   Every version comes with automatic documentation and metadata so you can check where the model came from.
-                  With a few lines of code you can upload your models from wherever you are. And with every upload, a new API endpoint is created that you can beautifully test from an integrated Postman. Once you're comfortable with the model, you can easily promote it."
+                  With a few lines of code you can upload your models from wherever you are.
+                  And with every upload, a new API endpoint is created that you can beautifully test from an integrated Postman.
+                  Once you're comfortable with the model, you can easily promote it."
                 </p>
                 <a href="https://www.linkedin.com/feed/update/urn:li:activity:6838881079026298880/" target="_blank">Read full review</a>
               </div>
@@ -115,7 +119,7 @@ const Reviews = () => {
                   </div>
                 </div>
                 <p className="desc">
-                  "TeachableHub is early stage but have a mature feature set: multi-environment,<br />blue/green deploys, model versioning, automatic model documentation generation, seamless autoscaling, etc.<br />
+                  "TeachableHub is early stage but have a mature feature set: multi-environment, blue/green deploys, model versioning, automatic model documentation generation, seamless autoscaling, etc.
                   If you look for a solution to free your Data Science team from writing Dockerfiles and Ops you might check it."
                 </p>
                 <a href="https://www.linkedin.com/feed/update/urn:li:activity:6845706089514754048/" target="_blank">Read full review</a>
@@ -132,7 +136,7 @@ const Reviews = () => {
                   </div>
                 </div>
                 <p className="desc">
-                  "I&apos;m currently using Kubeflow pipelines integrated on GCP for most of my MLOps endeavours,<br />but after looking at the deployment platform from the TeachableHub team, it really streamlines the MLE process <br />and serving the models, especially for Data Scientists."
+                  "I&apos;m currently using Kubeflow pipelines integrated on GCP for most of my MLOps endeavours, but after looking at the deployment platform from the TeachableHub team, it really streamlines the MLE process and serving the models, especially for Data Scientists."
                 </p>
                 <a href="https://www.linkedin.com/feed/update/urn%3Ali%3Aactivity%3A6840965437799444480/?actorCompanyId=69548374" target="_blank">Read full review</a>
               </div>
@@ -148,8 +152,9 @@ const Reviews = () => {
                   </div>
                 </div>
                 <p className="desc">
-                  "Very clear scope: deploying ML models. Let&apos;s all focus on one thing!<br />
-                  Neat UX: the team seems to have found the balance between flexibility (hackability) and strict declarative configuration.<br />Let&apos;s all think of our users! Modular architecture: not just the APIs of the platform are designed with easy integrations in mind,<br />the team always try to utilise third-party tools firs. Let&apos;s all stop reinventing the wheel!"
+                  "Very clear scope: deploying ML models. Let&apos;s all focus on one thing!
+                  Neat UX: the team seems to have found the balance between flexibility (hackability) and strict declarative configuration.
+                  Let&apos;s all think of our users! Modular architecture: not just the APIs of the platform are designed with easy integrations in mind, the team always try to utilise third-party tools firs. Let&apos;s all stop reinventing the wheel!"
                 </p>
                 <a href="https://www.linkedin.com/feed/update/urn:li:activity:6834496615219298304/" target="_blank">Read full review</a>
               </div>
@@ -183,7 +188,7 @@ const Reviews = () => {
                   </div>
                 </div>
                 <p className="desc">
-                  "It was eye opening to see how TeachableHub approaches MLOps...They are focusing on providing state of the art, easy to use Machine Learning Models deployment experience, which unties the hands of the software developers<br />to focus their energy on other challenges. Looking forward to work with TeachableHub!"
+                  "It was eye opening to see how TeachableHub approaches MLOps...They are focusing on providing state of the art, easy to use Machine Learning Models deployment experience, which unties the hands of the software developers to focus their energy on other challenges.<br />Looking forward to work with TeachableHub!"
                 </p>
                 <a href="https://www.linkedin.com/feed/update/urn%3Ali%3Aactivity%3A6848135807979548672/?actorCompanyId=69548374" target="_blank">Read full review</a>
               </div>

@@ -111,6 +111,20 @@
   background-image: linear-gradient(to bottom, transparent 0%, transparent 90%, #f8f9fc 100%);
 }
 
+.th-header-buttons {
+  display: flex;
+  flex-direction: column;
+
+  .btn {
+    white-space: nowrap;
+  }
+
+  .btn-success {
+    margin-left: 0;
+    margin-top: 50px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     .title-heading {
@@ -131,14 +145,23 @@
     margin: 0 auto !important;
     padding-top: 40px !important;
   }
-
-  .th-header-buttons {
-    display: flex;
-    // text-align: center;
-  }
 }
 
-@include media-breakpoint-up(sm) {}
+@include media-breakpoint-up(sm) {
+  .th-header-buttons {
+    flex-direction: row;
+
+    .btn-primary {
+      width: 270px;
+      padding: 14px 10px;
+    }
+
+    .btn-success {
+      margin-left: 30px;
+      margin-top: 0;
+    }
+  }
+}
 
 @include media-breakpoint-up(md) {}
 

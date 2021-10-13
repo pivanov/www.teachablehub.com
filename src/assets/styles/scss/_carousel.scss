@@ -87,7 +87,18 @@
 
   .desc {
     color: #777;
-    height: 110px;
-    margin: 0;
+    max-width: 740px;
+    min-height: 110px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-carousel {
+    .desc {
+      br {
+        display: none;
+      }
+    }
   }
 }

@@ -17,14 +17,14 @@ const Section = () => {
                 </p>
                 <div className="th-header-buttons mt-5">
                   <Link href="/#early-access">
-                    <a href="/#early-access" className="btn btn-lg btn-primary th-btn" style={{ width: 270, padding: '14px 10px' }}>
+                    <a href="/#early-access" className="btn btn-lg btn-primary th-btn">
                       SIGN UP FOR EARLY ACCESS
                       <span className="f-small f-uppercase pt-1">Deploy models in under 10 minutes!</span>
                     </a>
                   </Link>
 
                   <Link href="/#reviews">
-                    <a href="/#reviews" className="btn btn-lg btn-success th-btn" style={{ marginLeft: 30 }}>
+                    <a href="/#reviews" className="btn btn-lg btn-success th-btn">
                       SEE PRODUCT REVIEWS
                       <span className="f-small f-uppercase pt-1">From Machine Learning Experts!</span>
                     </a>
